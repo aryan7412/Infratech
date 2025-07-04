@@ -46,17 +46,21 @@ const index = () => {
 
                     {/* Solar Energy Solutions */}
                     <div className="w-[47rem] h-[19.625rem] bg-[#FEFEFE] rounded-3xl">
-                        <div className="pt-7 px-7 ">
-                            <div className="text-2xl font-bold text-[#0F1115] ">Solar Energy Solutions</div>
-                            <div className="text-sm text-[#50576B] mt-2">Solar power plants, rooftop solar installations, and solar-integrated infrastructure projects. We help you harness clean energy, reducing carbon footprints and ensuring long-term energy security.</div>
+                        <div className="text-2xl font-bold text-[#0F1115] pt-7 px-7">Solar Energy Solutions</div>
+                        <div className="flex">
+                            <div className="text-sm text-[#50576B] mt-2 max-w-7xl pt-1 px-7">Solar power plants, rooftop solar installations, and solar-integrated infrastructure projects. We help you harness clean energy, reducing carbon footprints and ensuring long-term energy security.</div>
+                            <Image
+                                src="/SolarPanel&Meter.png"
+                                alt="Homepage Image"
+                                width="350"
+                                height="200"
+                                className="ml-[23.5rem] mx-auto"
+                            />
                         </div>
-                        <Image
-                            src="/House1.png"
-                            alt="Homepage Image"
-                            width="350"
-                            height="200"
-                            className="ml-[23.5rem] mx-auto"
-                        />
+                        <Button variant="default" bgColor="bg-white" textColor="text-black">
+                            Contact Us
+                            <div className="rounded-full p-1 border border-[#F2F4F8]"><MdArrowOutward className='text-lg' /></div>
+                        </Button>
                     </div>
                 </div>
             </div>

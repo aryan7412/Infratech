@@ -76,12 +76,32 @@ const Hero = () => {
       {/* Our Trusted Partners */}
       <div className="bg-[#F6F7F9]">
         <p className="text-[#697289] text-xl text-center">Our Trusted Partners</p>
-        {/* <Image
-        src=""
-        alt=""
-        width={}
-        height={}
-         /> */}
+        <div className="flex items-center justify-center gap-14 mt-4">
+          <Image
+            src="/NTPC.png"
+            alt=""
+            width={60}
+            height={20}
+          />
+          <Image
+            src="/TPNODL.png"
+            alt=""
+            width={80}
+            height={20}
+          />
+          <Image
+            src="/OdishaShasan.png"
+            alt=""
+            width={60}
+            height={20}
+          />
+          <Image
+            src="/Tata.png"
+            alt=""
+            width={60}
+            height={20}
+          />
+        </div>
       </div>
     </div>
   )

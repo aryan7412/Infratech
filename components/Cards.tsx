@@ -58,8 +58,8 @@ export default function ProjectCard({
 
       {/* Optional Arrow Icon */}
       {showArrow && (
-        <div className="absolute bottom-4 right-4">
-          <MdArrowOutward className="w-5 h-5 text-gray-400" />
+        <div className="absolute bottom-4 right-4 h-10 w-10 border border-[#E5EAF0] rounded-full flex items-center justify-center mr-4 mb-2">
+          <MdArrowOutward className="w-5 h-5 text-black" />
         </div>
       )}
     </div>

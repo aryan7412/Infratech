@@ -9,7 +9,7 @@ const Heading = ({ text, align = "left" }: HeadingProps) => {
   const isCenter = align === "center";
 
   return (
-    <div className={`relative w-fit my-7 ml-[10.7rem] ${isCenter ? "mx-auto" : ""}`}>
+    <div className={`relative w-fit my-7 ${isCenter ? "mx-auto" : "ml-[10.5rem]"}`}>
       {/* Top-right corner */}
       <div className="absolute -top-1 -right-3 text-[#3EABE3] text-xs rotate-90">
         <TbBorderCornerSquare strokeWidth={3} />

@@ -33,11 +33,13 @@ const StatsSection = () => {
   return (
     <div className="bg-[#f6f7f9] px-4 py-16">
       <SectionHeading text="Impact" align="center" />
+      <div className="mr-32">
       <Heading
         text1="Sparkradix simplifies the process, "
         text2="& delivers results."
         align="center"
       />
+      </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 ml-36 mr-32">
         {stats.map((stat, index) => (

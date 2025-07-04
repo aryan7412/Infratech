@@ -39,7 +39,7 @@ const Testimonials = () => {
                     </div>
                     <div className="flex items-center gap-4 mt-6">
                         <Image
-                            src="/testimonials/sanjay-das.jpg"
+                            src=""
                             alt="Mr. Sanjay Das"
                             width={50}
                             height={50}
@@ -66,7 +66,7 @@ const Testimonials = () => {
                     </div>
                     <div className="flex items-center gap-4 mt-4">
                         <Image
-                            src="/testimonials/priya-sharma.jpg"
+                            src=""
                             alt="Ms. Priya Sharma"
                             width={50}
                             height={50}
@@ -91,7 +91,7 @@ const Testimonials = () => {
                         </p>
                         <div className="flex items-center gap-3 mt-4">
                             <Image
-                                src="/testimonials/rajesh-patel.jpg"
+                                src=""
                                 alt="Mr. Rajesh Patel"
                                 width={40}
                                 height={40}
