@@ -57,7 +57,7 @@ const Contact = () => {
           <Textarea placeholder="What can we help you with?" rows={5} />
 
           <Button type="submit" className="mt-4 text-white bg-[#174574] hover:bg-[#133c64] rounded-full px-6 py-3">
-            Send Message <span className="ml-2">\u2709\uFE0F</span>
+            Send Message
           </Button>
 
           <div className="mt-10 grid gap-6">
@@ -66,8 +66,8 @@ const Contact = () => {
                 <GrMapLocation className="text-[#23A0E0]" />
               </div>
               <div>
-                <h4 className="font-bold text-gray-700">Address</h4>
-                <p className="text-gray-600 text-sm">
+                <h4 className="text-[#697289] text-sm">Address</h4>
+                <p className="text-[#50576B] text-[0.9rem]">
                   DCB 516, 5th Floor, DLF Cyber City, Idco Info Park, Patia,<br />
                   Bhubaneswar, Odisha, India, 751024
                 </p>
@@ -78,8 +78,8 @@ const Contact = () => {
                 <TbWorld className="text-[#23A0E0]" />
               </div>
               <div>
-                <h4 className="font-bold text-gray-700">Office Hours</h4>
-                <p className="text-gray-600 text-sm">Monday to Saturday: 9:00 AM – 6:00 PM</p>
+                <h4 className=" text-[#697289]">Office Hours</h4>
+                <p className="text-[#50576B] text-sm">Monday to Saturday: 9:00 AM – 6:00 PM</p>
               </div>
             </div>
           </div>
