@@ -49,7 +49,7 @@ const Timeline = () => {
       const container = containerRef.current;
       if (!container) return;
 
-      const padding = 1000; // <-- padding top & bottom for animation start/end
+      const padding = 1000; 
       const containerRect = container.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
@@ -64,7 +64,7 @@ const Timeline = () => {
     const animate = () => {
       setAnimatedHeight((prev) => {
         const diff = targetHeight - prev;
-        const step = diff * 0.5; // smaller = slower easing
+        const step = diff * 0.5;
         if (Math.abs(diff) < 0.5) return targetHeight;
         animationFrame = requestAnimationFrame(animate);
         return prev + step;
