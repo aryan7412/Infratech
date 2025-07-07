@@ -58,7 +58,7 @@ const FAQItem = ({
     onToggle: () => void;
 }) => (
     <div
-        className={`border-b border-[#E6E8EC] py-6 cursor-pointer transition-all duration-300 max-w-lg`}
+        className={`border-b border-[#E6E8EC] py-7 cursor-pointer transition-all duration-300 max-w-lg`}
         onClick={onToggle}
     >
         <div className="flex justify-between items-start">
@@ -79,7 +79,7 @@ const index = () => {
     const [openIndex, setOpenIndex] = useState(0);
 
     return (
-        <div className="flex flex-col md:flex-row bg-[#F6F7F9] pb-20 gap-44">
+        <div className="flex flex-col md:flex-row bg-[#F6F7F9] pb-20 gap-44 mt-20">
             {/* Left Section */}
             <div className="max-w-lg">
                 <SectionHeading text="FAQ's" align="left" />

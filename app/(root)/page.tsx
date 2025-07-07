@@ -5,6 +5,7 @@ import OurProcess from "@/components/OurProcess";
 import FAQ from "@/components/FAQ"
 import Impact from "@/components/Impact"
 import OurWork from "@/components/OurWork"
+import Timeline from "@/components/Timeline";
 
 
 const HomePage = async () => {
@@ -16,6 +17,7 @@ const HomePage = async () => {
       <OurWork />
       <Testimonial />
       <OurProcess />
+      <Timeline />
       <FAQ />
       
     </div>

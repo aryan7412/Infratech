@@ -51,7 +51,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   <div className="flex items-start relative min-h-[100px]">
     {/* Dot and Line */}
     <div className="flex flex-col items-center mr-6 relative">
-      <div className="w-8 h-8 bg-white border border-gray-300 rounded-full flex items-center justify-center text-sm font-semibold text-gray-700 z-10">
+      <div className="w-10 h-10 bg-white border border-gray-300 rounded-full flex items-center justify-center text-sm font-semibold text-gray-700 z-10">
         {number.toString().padStart(2, "0")}
       </div>
       {/* Absolutely positioned vertical line */}
@@ -76,7 +76,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 
 const ProcessSection: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-40 bg-[#F6F7F9]">
+    <div className="flex flex-col md:flex-row gap-40 bg-[#F6F7F9]  mt-10">
       {/* Left Section */}
       <div className="max-w-lg">
         <SectionHeading text="Our process" align="left" />
@@ -93,7 +93,7 @@ const ProcessSection: React.FC = () => {
       </div>
 
       {/* Right Section (timeline column fix) */}
-      <div className="mt-10 flex flex-col h-full justify-between">
+      <div className="mt-10 flex flex-col gap-20 justify-between">
         {steps.map((step, index) => (
           <TimelineItem
             key={index}

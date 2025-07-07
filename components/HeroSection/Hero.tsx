@@ -3,6 +3,7 @@ import { Button } from "../ui/button"
 import { MdArrowOutward } from "react-icons/md"
 import ProjectCard from "@/components/Cards"
 
+
 const Hero = () => {
   return (
     <div>
@@ -42,31 +43,24 @@ const Hero = () => {
         <div className="absolute bg-black/20 z-[1]" />
       </div>
       {/* Bottom Section */}
-      <div className="gap-6 p-6 flex flex-row bg-[#F6F7F9]">
-        {/* <ProjectCard
-          image=""
-          title="Vertax Labs"
-          tags={["SaaS", "Web app"]}
-          isMockup
-          showArrow={true}
-        /> */}
+      <div className="gap-6 p-6 flex flex-row mt-10 bg-[#F6F7F9]">
 
         <ProjectCard
-          image=""
+          image="/Demo.png"
           title="OrbitCloud"
           description="Web design · development"
           metric="125% Boost in leads"
           showArrow={false}
         />
         <ProjectCard
-          image=""
+          image="/Demo.png"
           title="Cloudash"
           description="Web design · development"
           metric="+65% Customer sign-ups"
           showArrow={false}
         />
         <ProjectCard
-          image=""
+          image="/Demo.png"
           title="Asterisk inc"
           description="Web design · development"
           showArrow={false}
@@ -74,20 +68,20 @@ const Hero = () => {
       </div>
 
       {/* Our Trusted Partners */}
-      <div className="bg-[#F6F7F9]">
-        <p className="text-[#697289] text-xl text-center">Our Trusted Partners</p>
+      <div className="bg-[#F6F7F9] mt-10">
+        <p className="text-[#697289] text-2xl text-center">Our Trusted Partners</p>
         <div className="flex items-center justify-center gap-14 mt-4">
           <Image
             src="/NTPC.png"
             alt=""
-            width={60}
+            width={100}
             height={20}
           />
           <Image
             src="/TPNODL.png"
             alt=""
-            width={80}
-            height={20}
+            width={120}
+            height={40}
           />
           <Image
             src="/OdishaShasan.png"
@@ -98,7 +92,7 @@ const Hero = () => {
           <Image
             src="/Tata.png"
             alt=""
-            width={60}
+            width={80}
             height={20}
           />
         </div>

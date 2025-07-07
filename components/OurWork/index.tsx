@@ -1,17 +1,32 @@
+'use client';
+
 import SectionHeading from "@/components/Heading/SectionHeading"
 import { Button } from "@/components/ui/button"
 import { MdArrowOutward } from "react-icons/md"
 import ProjectCard from "@/components/Cards"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // 💡 Make sure this is included
+import { useEffect } from 'react';
 
 const index = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
+
     return (
-        <div className="bg-[#F6F7F9]">
-            <SectionHeading text="Our Work" align="left" />
-            <div className="flex gap-x-1 ml-40">
-                <div className="text-3xl text-black font-bold">Building Beyond</div>
-                <div className="text-3xl text-[#145089] font-bold">Blueprints</div>
+        <div className="bg-[#F6F7F9] mt-32">
+            <div>
+                <SectionHeading text="Our Work" align="left" />
+                <div className="flex gap-x-1 ml-40">
+                    <div className="text-3xl text-black font-bold">Building Beyond</div>
+                    <div className="text-3xl text-[#145089] font-bold">Blueprints</div>
+                </div>
             </div>
-            <div className="flex ml-40 gap-20">
+
+            <div className="flex ml-40 gap-20" data-aos="fade-up">
                 <p className="mt-4 mr-[21rem]">See how we’ve helped clients turn ambitious visions into tangible, impactful <br /> infrastructure.</p>
                 <Button variant="default" bgColor="bg-white" textColor="text-black" >
                     View all projects

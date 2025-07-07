@@ -8,30 +8,34 @@ import { TbMessageChatbotFilled } from "react-icons/tb";
 
 const Testimonials = () => {
     return (
-        <div className="bg-[#F6F7F9] pb-16 pt-10 px-4">
+        <div className="bg-[#F6F7F9] pb-16 pt-10 px-4 mt-10">
+            <div data-aos="fade-up">
             <SectionHeading text="Testimonials" align="center" />
+            <div className="mr-32">
             <Heading
                 text1="Results that speaks volume"
                 text2="Read success stories"
                 align="center"
             />
+            </div>
             <div className="flex justify-center mt-4 text-center">
-                <p className="text-[#50576B] text-sm max-w-2xl">
+                <p className="text-[#50576B] text-md max-w-5xl">
                     We transform ambitious visions into reality with innovative electrical,
                     civil, and solar solutions. Hear from our clients about how our
                     expertise and dedication have powered their progress.
                 </p>
             </div>
+            </div>
 
             {/* Grid of Testimonials */}
             <div className="grid grid-cols-1 md:grid-cols-2 mt-10 mx-auto ml-36 max-w-6xl">
                 {/* Left column (Card 1 spans 2 rows) */}
-                <div className="row-span-2 w-[35rem] h-[35.5rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md">
+                <div className="row-span-2 w-[35rem] h-[35.5rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
                     <div>
-                        <div className="text-5xl font-bold text-[#1B1C57]">10X</div>
-                        <div className="text-lg text-[#3A3A3A] mt-1 mb-4">Boost in energy efficiency</div>
+                        <div className="text-5xl font-bold text-[#316698]">10X</div>
+                        <div className="text-lg text-[#50576B] font-bold mt-1 mb-4">Boost in energy efficiency</div>
                         <RiDoubleQuotesR className="text-[#1DA1F2] text-2xl" />
-                        <p className="text-sm text-[#50576B] mt-3">
+                        <p className="text-md text-[#50576B] mt-3">
                             Sparkradix delivered a state-of-the-art solar power system for our
                             rural electrification project. Their professionalism and commitment
                             to quality ensured reliable energy for thousands of households.
@@ -53,12 +57,14 @@ const Testimonials = () => {
                 </div>
 
                 {/* Card 2 (Top Right) */}
-                <div className="w-[35rem] h-[17.25rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md mb-[1.5rem]">
+                <div className="w-[35rem] h-[17.25rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md mb-[1.5rem]" data-aos="fade-up">
                     <div>
-                        <div className="text-3xl font-bold text-[#1B1C57]">2X</div>
-                        <div className="text-lg text-[#3A3A3A] mt-1 mb-4">Sustainable Infrastructure</div>
+                        <div className="flex gap-x-3">
+                        <div className="text-3xl font-bold text-[#316698]">2X</div>
+                        <div className="text-lg text-[#50576B] font-bold mt-1 mb-4">sustainable Infrastructure</div>
+                        </div>
                         <RiDoubleQuotesR className="text-[#1DA1F2] text-2xl" />
-                        <p className="text-sm text-[#50576B] mt-3">
+                        <p className="text-base text-[#50576B] mt-3">
                             Working with Sparkradix on our industrial park was a game-changer.
                             Their civil construction expertise and timely execution helped us
                             establish a thriving business hub.
@@ -82,7 +88,7 @@ const Testimonials = () => {
                 {/* Row of 2 small cards below */}
                 <div className="col-span-1 grid grid-cols-2 ml-4">
                     {/* Card 3 */}
-                    <div className="w-[16.15rem] h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md">
+                    <div className="w-[16.15rem] h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
                         <RiDoubleQuotesR className="text-pink-400 text-2xl" />
                         <p className="text-sm text-[#50576B] mt-3">
                             Working with Sparkradix on our industrial park was a game-changer.
@@ -105,7 +111,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Card 4 */}
-                    <div className="w-[16.15rem] h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md ml-[0.4rem]">
+                    <div className="w-[16.15rem] h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md ml-[0.4rem]" data-aos="fade-up" data-aos-delay="500">
                         <RiDoubleQuotesR className="text-pink-400 text-2xl" />
                         <p className="text-sm text-[#50576B] mt-3">
                             Working with Sparkradix on our industrial park was a game-changer.
