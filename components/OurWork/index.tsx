@@ -26,7 +26,7 @@ const index = () => {
                 </div>
             </div>
 
-            <div className="flex ml-40 gap-20" data-aos="fade-up">
+            <div className="flex ml-40 gap-20">
                 <p className="mt-4 mr-[21rem]">See how we’ve helped clients turn ambitious visions into tangible, impactful <br /> infrastructure.</p>
                 <Button variant="default" bgColor="bg-white" textColor="text-black" >
                     View all projects
