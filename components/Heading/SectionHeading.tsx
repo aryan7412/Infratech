@@ -3,17 +3,24 @@
 import { TbBorderCornerSquare } from "react-icons/tb";
 import { motion } from "framer-motion";
 
-interface HeadingProps {
+interface SectionHeadingProps {
   text: string;
   align?: "left" | "center";
+  className?: string;
 }
 
-const Heading = ({ text, align = "left" }: HeadingProps) => {
+const SectionHeading = ({ text, align = "left", className = "" }: SectionHeadingProps) => {
   const isCenter = align === "center";
   const letters = text.split("");
   const mid = Math.floor(letters.length / 2);
 
   return (
+    <div className={`relative w-fit my-7 ${isCenter ? "mx-auto" : className}`}>
+      <div className="absolute -top-1 -right-3 text-[#3EABE3] text-xs rotate-90">
+        <TbBorderCornerSquare strokeWidth={3} />
+      </div>
+      <div className="absolute -bottom-1 -left-3 text-[#3EABE3] text-xs -rotate-90">
+        <TbBorderCornerSquare strokeWidth={3} />
     <div className={`relative w-fit my-7 ${isCenter ? "mx-auto" : "ml-[10.5rem]"}`}>
       {/* Top-right corner */}
       <div className="absolute -top-1 -right-3 text-[#3EABE3] text-md rotate-90">
@@ -38,8 +45,6 @@ const Heading = ({ text, align = "left" }: HeadingProps) => {
           <TbBorderCornerSquare strokeWidth={3} />
         </motion.div>
       </div>
-
-      {/* Main text */}
       <h1 className={`text-sm ${isCenter ? "text-center" : "text-left"} text-[#2D2F33]`}>
         {letters.map((char, index) => {
           const distance = Math.abs(index - mid); // Distance from center
@@ -66,4 +71,4 @@ const Heading = ({ text, align = "left" }: HeadingProps) => {
   );
 };
 
-export default Heading;
+export default SectionHeading;

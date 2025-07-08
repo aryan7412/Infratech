@@ -19,7 +19,7 @@ const index = () => {
     return (
         <div className="bg-[#F6F7F9] mt-32">
             <div>
-                <SectionHeading text="Our Work" align="left" />
+                <SectionHeading text="Our Work" align="left" className="ml-40" />
                 <div className="flex gap-x-1 ml-40">
                     <div className="text-3xl text-black font-bold">Building Beyond</div>
                     <div className="text-3xl text-[#145089] font-bold">Blueprints</div>
