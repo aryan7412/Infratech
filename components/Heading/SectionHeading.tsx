@@ -16,12 +16,6 @@ const SectionHeading = ({ text, align = "left", className = "" }: SectionHeading
 
   return (
     <div className={`relative w-fit my-7 ${isCenter ? "mx-auto" : className}`}>
-      <div className="absolute -top-1 -right-3 text-[#3EABE3] text-xs rotate-90">
-        <TbBorderCornerSquare strokeWidth={3} />
-      </div>
-      <div className="absolute -bottom-1 -left-3 text-[#3EABE3] text-xs -rotate-90">
-        <TbBorderCornerSquare strokeWidth={3} />
-    <div className={`relative w-fit my-7 ${isCenter ? "mx-auto" : "ml-[10.5rem]"}`}>
       {/* Top-right corner */}
       <div className="absolute -top-1 -right-3 text-[#3EABE3] text-md rotate-90">
         <motion.div
@@ -45,10 +39,11 @@ const SectionHeading = ({ text, align = "left", className = "" }: SectionHeading
           <TbBorderCornerSquare strokeWidth={3} />
         </motion.div>
       </div>
+
+      {/* Heading Text */}
       <h1 className={`text-sm ${isCenter ? "text-center" : "text-left"} text-[#2D2F33]`}>
         {letters.map((char, index) => {
-          const distance = Math.abs(index - mid); // Distance from center
-
+          const distance = Math.abs(index - mid);
           return (
             <motion.span
               key={index}
@@ -65,7 +60,6 @@ const SectionHeading = ({ text, align = "left", className = "" }: SectionHeading
             </motion.span>
           );
         })}
-
       </h1>
     </div>
   );
