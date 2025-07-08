@@ -1,3 +1,6 @@
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
 import Heading from "@/components/Heading/Heading";
 import SectionHeading from "@/components/Heading/SectionHeading";
 import { TbBorderCornerSquare } from "react-icons/tb";
@@ -39,70 +42,120 @@ interface TimelineItemProps {
   number: number;
   title: string;
   description: string;
-  isLast: boolean;
 }
 
-const TimelineItem: React.FC<TimelineItemProps> = ({
-  number,
-  title,
-  description,
-  isLast,
-}) => (
-  <div className="flex items-start relative min-h-[100px]">
-    {/* Dot and Line */}
-    <div className="flex flex-col items-center mr-6 relative">
-      <div className="w-10 h-10 bg-white border border-gray-300 rounded-full flex items-center justify-center text-sm font-semibold text-gray-700 z-10">
-        {number.toString().padStart(2, "0")}
-      </div>
-      {/* Absolutely positioned vertical line */}
-      {!isLast && (
-        <div className="absolute top-8 left-1/2 -translate-x-1/2 w-px h-[calc(100%_-_2rem)] bg-blue-500 z-0" />
-      )}
+const TimelineItem: React.FC<TimelineItemProps> = ({ number, title, description }) => (
+  <div className="relative flex items-center gap-6">
+    <div className="relative z-20 w-12 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center font-semibold text-gray-700">
+      {number.toString().padStart(2, "0")}
     </div>
 
-    {/* Content */}
-    <div className="pb-14">
-      <h3 className="text-lg font-bold text-black flex items-center gap-2 relative">
+    <div className="p-4 bg-white w-full">
+      <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 relative">
         {title}
         <TbBorderCornerSquare
-          className="absolute -top-1 -right-3 text-[#3EABE3] text-xs rotate-90"
+          className="absolute -top-1 -right-1 text-[#2f89de] text-xs rotate-90"
           strokeWidth={3}
         />
       </h3>
-      <p className="text-gray-600 mt-2 max-w-md">{description}</p>
+      <p className="text-gray-600 mt-2">{description}</p>
     </div>
   </div>
 );
 
 const ProcessSection: React.FC = () => {
-  return (
-    <div className="flex flex-col md:flex-row gap-40 bg-[#F6F7F9]  mt-10">
-      {/* Left Section */}
-      <div className="max-w-lg">
-        <SectionHeading text="Our process" align="left" />
-        <Heading
-          text1="A proven & effective "
-          text2="workflow process."
-          align="left"
-        />
-        <p className="ml-40 mt-10 text-[#50576B]">
-          We dive deep into your project's objectives, stakeholders, and
-          challenges to craft tailored strategies that deliver impactful
-          solutions.
-        </p>
-      </div>
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [targetHeight, setTargetHeight] = useState(0);
+  const [animatedHeight, setAnimatedHeight] = useState(0);
+  const animationRef = useRef<number | null>(null);
 
-      {/* Right Section (timeline column fix) */}
-      <div className="mt-10 flex flex-col gap-20 justify-between">
-        {steps.map((step, index) => (
-          <TimelineItem
-            key={index}
-            number={index + 1}
-            title={step.title}
-            description={step.description}
-            isLast={index === steps.length - 1}
+  useEffect(() => {
+    let prevScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const containerTop = container.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+      const maxVisible = container.offsetHeight;
+
+      const maxHeight = 750;
+      const visibleHeight = Math.min(
+        Math.min(maxVisible, maxHeight),
+        Math.max(0, viewportHeight - containerTop)
+      );
+
+      setTargetHeight(visibleHeight);
+    };
+
+    const animate = () => {
+      setAnimatedHeight((prevHeight) => {
+        const diff = targetHeight - prevHeight;
+        const easing = 0.07; 
+        const nextHeight = prevHeight + diff * easing;
+
+        if (Math.abs(diff) < 1) {
+          cancelAnimationFrame(animationRef.current!);
+          return targetHeight;
+        }
+
+        animationRef.current = requestAnimationFrame(animate);
+        return nextHeight;
+      });
+    };
+
+    const onScroll = () => {
+      handleScroll();
+      cancelAnimationFrame(animationRef.current!);
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('scroll', onScroll);
+    handleScroll();
+    animate(); 
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(animationRef.current!);
+    };
+  }, [targetHeight]);
+
+  return (
+    <div className="bg-[#F6F7F9] py-20 m-0 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
+        <div className="max-w-lg">
+          <SectionHeading className='sticky top-0' text="Our process" />
+          <Heading
+            text1="A proven & effective "
+            text2="workflow process."
           />
-        ))}
+          <p className="mt-10 text-[#50576B]">
+            We dive deep into your project's objectives, stakeholders, and
+            challenges to craft tailored strategies that deliver impactful
+            solutions.
+          </p>
+        </div>
+
+        <div className="relative w-full" ref={containerRef}>
+          <div className="absolute left-20 top-10 w-1 h-[85%] bg-gray-200" />
+
+          <div
+            className="absolute transition-all duration-500 ease-in-out left-20 top-10 w-1 bg-blue-500 rounded"
+            style={{ height: animatedHeight }}
+          />
+
+          <div className="flex flex-col gap-16 pl-14">
+            {steps.map((step, index) => (
+              <TimelineItem
+                key={index}
+                number={index + 1}
+                title={step.title}
+                description={step.description}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

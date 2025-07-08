@@ -1,26 +1,22 @@
 import { TbBorderCornerSquare } from "react-icons/tb";
 
-interface HeadingProps {
+interface SectionHeadingProps {
   text: string;
   align?: "left" | "center";
+  className?: string;
 }
 
-const Heading = ({ text, align = "left" }: HeadingProps) => {
+const SectionHeading = ({ text, align = "left", className = "" }: SectionHeadingProps) => {
   const isCenter = align === "center";
 
   return (
-    <div className={`relative w-fit my-7 ${isCenter ? "mx-auto" : "ml-[10.5rem]"}`}>
-      {/* Top-right corner */}
+    <div className={`relative w-fit my-7 ${isCenter ? "mx-auto" : className}`}>
       <div className="absolute -top-1 -right-3 text-[#3EABE3] text-xs rotate-90">
         <TbBorderCornerSquare strokeWidth={3} />
       </div>
-
-      {/* Bottom-left corner */}
       <div className="absolute -bottom-1 -left-3 text-[#3EABE3] text-xs -rotate-90">
         <TbBorderCornerSquare strokeWidth={3} />
       </div>
-
-      {/* Main text */}
       <h1 className={`text-sm ${isCenter ? "text-center" : "text-left"} text-[#2D2F33]`}>
         {text}
       </h1>
@@ -28,4 +24,4 @@ const Heading = ({ text, align = "left" }: HeadingProps) => {
   );
 };
 
-export default Heading;
+export default SectionHeading;
