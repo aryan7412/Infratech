@@ -13,10 +13,10 @@ import { RiTelegram2Line } from "react-icons/ri";
 const Contact = () => {
   return (
     <div className="bg-white py-20 mt-32">
-      <div className="grid md:grid-cols-2 gap-20" data-aos="fade-up">
+      <div className="grid md:grid-cols-2 gap-20">
         {/* Left Content */}
         <div className="max-w-2xl">
-          <SectionHeading text="Book a call" align="left" />
+          <SectionHeading text="Contactus" align="left" />
           <h1 className="text-5xl font-bold mb-6 text-[#0F1115] ml-[9.5rem]">Let's collaborate</h1>
           <p className="text-[#50576B] mb-8 ml-[9.5rem]">
             Reach out and let’s explore how we can bring your ideas to life. Whether
@@ -46,17 +46,36 @@ const Contact = () => {
 
         {/* Right Content - Contact Form */}
         <form className="flex flex-col gap-4 mt-7 max-w-md">
-          <Input type="text" placeholder="Name" />
-          <Input type="email" placeholder="Email" />
-
-          <div className="flex gap-4">
-            <Input type="text" placeholder="Company name" className="w-1/2" />
-            <Input type="tel" placeholder="Phone" className="w-1/2" />
+          <div className="relative">
+            <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Input type="text" placeholder="Name" className="pl-10" />
           </div>
 
-          <Textarea placeholder="What can we help you with?" rows={5} />
+          <div className="relative">
+            <MdOutlineAlternateEmail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Input type="email" placeholder="Email" className="pl-10" />
+          </div>
 
-          <Button type="submit" className="mt-4 text-white bg-[#174574] hover:bg-[#133c64] rounded-full px-6 py-3">
+          <div className="flex gap-4">
+            <div className="relative w-1/2">
+              <TbBuilding className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Input type="text" placeholder="Company name" className="pl-10" />
+            </div>
+            <div className="relative w-1/2">
+              <IoPhonePortraitOutline className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Input type="tel" placeholder="Phone" className="pl-10" />
+            </div>
+          </div>
+
+          <div className="relative">
+            <LuMessageSquareText className="absolute left-4 top-5 text-gray-400" />
+            <Textarea placeholder="What can we help you with?" rows={5} className="pl-10 pt-4" />
+          </div>
+
+          <div className="relative">
+          <RiTelegram2Line className="absolute left-[17.5rem] top-7 text-white" />
+          </div>
+          <Button type="submit" className=" text-white bg-[#145089] hover:bg-[#133c64] rounded-full px-6 py-3">
             Send Message
           </Button>
 
