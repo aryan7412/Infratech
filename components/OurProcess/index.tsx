@@ -90,7 +90,7 @@ const ProcessSection: React.FC = () => {
 
     const animate = () => {
       const diff = targetHeightRef.current - animatedHeightRef.current;
-      const easing = 0.07;
+      const easing = 0.02;
       const nextHeight = animatedHeightRef.current + diff * easing;
 
       if (progressBarRef.current) {
