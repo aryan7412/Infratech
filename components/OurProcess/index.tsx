@@ -66,57 +66,40 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ number, title, description 
 const ProcessSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number | null>(null);
-  const animatedHeightRef = useRef(0);
-  const targetHeightRef = useRef(0);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const handleScroll = () => {
+      const container = containerRef.current;
+      const progressBar = progressBarRef.current;
 
-    const updateTargetHeight = () => {
-      const containerTop = container.getBoundingClientRect().top;
-      const viewportHeight = window.innerHeight;
-      const maxVisible = container.offsetHeight;
-      const maxHeight = 750;
+      if (!container || !progressBar) return;
 
-      const visibleHeight = Math.min(
-        Math.min(maxVisible, maxHeight),
-        Math.max(0, viewportHeight - containerTop)
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const totalHeight = container.offsetHeight;
+      const scrollStart = windowHeight; // When the top of the container reaches bottom of viewport
+      const scrollEnd = -totalHeight;   // When the bottom of the container reaches top of viewport
+
+      // Scroll progress between 0 and 1
+      const progress = Math.min(
+        1,
+        Math.max(0, (scrollStart - rect.top) / (scrollStart - scrollEnd))
       );
 
-      targetHeightRef.current = visibleHeight;
+      const maxLineHeight = totalHeight * 0.85; // Match the gray line height
+      const lineHeight = progress * maxLineHeight;
+
+      progressBar.style.height = `${lineHeight}px`;
     };
 
-    const animate = () => {
-      const diff = targetHeightRef.current - animatedHeightRef.current;
-      const easing = 0.02;
-      const nextHeight = animatedHeightRef.current + diff * easing;
-
-      if (progressBarRef.current) {
-        progressBarRef.current.style.height = `${nextHeight}px`;
-      }
-
-      animatedHeightRef.current = nextHeight;
-
-      if (Math.abs(diff) >= 1) {
-        animationRef.current = requestAnimationFrame(animate);
-      }
-    };
-
-    const onScroll = () => {
-      updateTargetHeight();
-      cancelAnimationFrame(animationRef.current!);
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    updateTargetHeight();
-    animate();
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    handleScroll(); // run initially
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(animationRef.current!);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -126,10 +109,7 @@ const ProcessSection: React.FC = () => {
         {/* Left Content */}
         <div className="max-w-lg">
           <SectionHeading className="sticky top-0" text="Our process" />
-          <Heading
-            text1="A proven & effective "
-            text2="workflow process."
-          />
+          <Heading text1="A proven & effective " text2="workflow process." />
           <p className="mt-10 text-[#50576B]">
             We dive deep into your project's objectives, stakeholders, and
             challenges to craft tailored strategies that deliver impactful
@@ -142,7 +122,7 @@ const ProcessSection: React.FC = () => {
           {/* Gray line */}
           <div className="absolute left-20 top-10 w-1 h-[85%] bg-gray-200" />
 
-          {/* Animated Blue line */}
+          {/* Scroll-synced Blue line */}
           <div
             ref={progressBarRef}
             className="absolute left-20 top-10 w-1 bg-blue-500 rounded"
