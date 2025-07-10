@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from "react";
 import Heading from "@/components/Heading/Heading";
 import SectionHeading from "@/components/Heading/SectionHeading";
 import { TbBorderCornerSquare } from "react-icons/tb";
@@ -65,67 +65,67 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ number, title, description 
 
 const ProcessSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [targetHeight, setTargetHeight] = useState(0);
-  const [animatedHeight, setAnimatedHeight] = useState(0);
+  const progressBarRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
+  const animatedHeightRef = useRef(0);
+  const targetHeightRef = useRef(0);
 
   useEffect(() => {
-    let prevScrollY = window.scrollY;
+    const container = containerRef.current;
+    if (!container) return;
 
-    const handleScroll = () => {
-      const container = containerRef.current;
-      if (!container) return;
-
+    const updateTargetHeight = () => {
       const containerTop = container.getBoundingClientRect().top;
       const viewportHeight = window.innerHeight;
       const maxVisible = container.offsetHeight;
-
       const maxHeight = 750;
+
       const visibleHeight = Math.min(
         Math.min(maxVisible, maxHeight),
         Math.max(0, viewportHeight - containerTop)
       );
 
-      setTargetHeight(visibleHeight);
+      targetHeightRef.current = visibleHeight;
     };
 
     const animate = () => {
-      setAnimatedHeight((prevHeight) => {
-        const diff = targetHeight - prevHeight;
-        const easing = 0.07; 
-        const nextHeight = prevHeight + diff * easing;
+      const diff = targetHeightRef.current - animatedHeightRef.current;
+      const easing = 0.07;
+      const nextHeight = animatedHeightRef.current + diff * easing;
 
-        if (Math.abs(diff) < 1) {
-          cancelAnimationFrame(animationRef.current!);
-          return targetHeight;
-        }
+      if (progressBarRef.current) {
+        progressBarRef.current.style.height = `${nextHeight}px`;
+      }
 
+      animatedHeightRef.current = nextHeight;
+
+      if (Math.abs(diff) >= 1) {
         animationRef.current = requestAnimationFrame(animate);
-        return nextHeight;
-      });
+      }
     };
 
     const onScroll = () => {
-      handleScroll();
+      updateTargetHeight();
       cancelAnimationFrame(animationRef.current!);
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    window.addEventListener('scroll', onScroll);
-    handleScroll();
-    animate(); 
+    window.addEventListener("scroll", onScroll);
+    updateTargetHeight();
+    animate();
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(animationRef.current!);
     };
-  }, [targetHeight]);
+  }, []);
 
   return (
     <div className="bg-[#F6F7F9] py-20 m-0 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
+        {/* Left Content */}
         <div className="max-w-lg">
-          <SectionHeading className='sticky top-0' text="Our process" />
+          <SectionHeading className="sticky top-0" text="Our process" />
           <Heading
             text1="A proven & effective "
             text2="workflow process."
@@ -137,14 +137,19 @@ const ProcessSection: React.FC = () => {
           </p>
         </div>
 
+        {/* Right Timeline */}
         <div className="relative w-full" ref={containerRef}>
+          {/* Gray line */}
           <div className="absolute left-20 top-10 w-1 h-[85%] bg-gray-200" />
 
+          {/* Animated Blue line */}
           <div
-            className="absolute transition-all duration-500 ease-in-out left-20 top-10 w-1 bg-blue-500 rounded"
-            style={{ height: animatedHeight }}
+            ref={progressBarRef}
+            className="absolute left-20 top-10 w-1 bg-blue-500 rounded"
+            style={{ height: "0px" }}
           />
 
+          {/* Timeline Items */}
           <div className="flex flex-col gap-16 pl-14">
             {steps.map((step, index) => (
               <TimelineItem
