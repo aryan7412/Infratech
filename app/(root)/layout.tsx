@@ -8,8 +8,8 @@ export default function RootLayout({
 }>) {
   return (
     <div className="relative flex min-h-screen flex-col bg-[#F6F7F9]">
-      <Header />
-      <div className="flex-1 wrapper bg-[#F6F7F9] rounded-t-3xl overflow-hidden">
+            <Header />
+      <div className="flex-1 wrapper bg-[#F6F7F9] rounded-t-3xl overflow-hidden -mt-14">
         <main>
           {children}
         </main>

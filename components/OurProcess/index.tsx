@@ -1,6 +1,11 @@
+"use client"
+
 import Heading from "@/components/Heading/Heading";
 import SectionHeading from "@/components/Heading/SectionHeading";
 import { TbBorderCornerSquare } from "react-icons/tb";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 interface Step {
   title: string;
@@ -61,7 +66,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
     </div>
 
     {/* Content */}
-    <div className="pb-14">
+    <div className="pb-14" data-aos="fade-up">
       <h3 className="text-lg font-bold text-black flex items-center gap-2 relative">
         {title}
         <TbBorderCornerSquare
@@ -75,10 +80,16 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 );
 
 const ProcessSection: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
   return (
-    <div className="flex flex-col md:flex-row gap-40 bg-[#F6F7F9]  mt-10">
+    <div className="  flex flex-col md:flex-row gap-40 bg-[#F6F7F9] mt-10">
       {/* Left Section */}
-      <div className="max-w-lg">
+      <div className=" max-w-lg">
         <SectionHeading text="Our process" align="left" />
         <Heading
           text1="A proven & effective "
@@ -101,6 +112,7 @@ const ProcessSection: React.FC = () => {
             title={step.title}
             description={step.description}
             isLast={index === steps.length - 1}
+            
           />
         ))}
       </div>

@@ -48,7 +48,7 @@ const FAQSection = () => {
   return (
     <div className="flex flex-col md:flex-row bg-[#F6F7F9] pb-20 gap-44 mt-20">
       {/* Left Section */}
-      <div className="max-w-lg">
+      <div className="max-w-lg ">
         <SectionHeading text="FAQ's" align="left" />
         <Heading text1="Have questions," text2="We got answers." align="left" />
         <p className="ml-40 mt-5 text-[#50576B] text-sm">

@@ -6,7 +6,7 @@ import { MdArrowOutward, MdKeyboardArrowDown } from "react-icons/md"
 
 const Header = () => {
     return (
-        <div className='absolute flex justify-center translate-x-1/2 translate-y-6 z-10'>
+        <div className='flex justify-center translate-y-6 z-50 sticky top-0'>
             <div className="bg-[#145089] flex w-[734px] h-[56px] rounded-full text-white items-center justify-center gap-6 px-4">
                 <Link href="/About">
                     <div className="flex items-center">About</div>
