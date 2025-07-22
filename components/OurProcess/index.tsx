@@ -87,9 +87,9 @@ const ProcessSection: React.FC = () => {
     });
   }, []);
   return (
-    <div className="  flex flex-col md:flex-row gap-40 bg-[#F6F7F9] mt-10">
+    <div className="flex flex-col md:flex-row gap-40 bg-[#F6F7F9] mt-10">
       {/* Left Section */}
-      <div className=" max-w-lg">
+      <div className="max-w-lg ">
         <SectionHeading text="Our process" align="left" />
         <Heading
           text1="A proven & effective "

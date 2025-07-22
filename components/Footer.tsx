@@ -67,7 +67,7 @@ const Footer = () => {
         {/* Company Info */}
         <div className="space-y-4 max-w-xs pr-4">
           <Image
-            src="/logo.png"
+            src=""
             alt="Sparkradix Logo"
             width={160}
             height={40}
