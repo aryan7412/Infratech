@@ -28,7 +28,7 @@ const index = () => {
 
             <div className="flex ml-40 gap-20">
                 <p className="mt-4 mr-[21rem]">See how we’ve helped clients turn ambitious visions into tangible, impactful <br /> infrastructure.</p>
-                <Button variant="default" bgColor="bg-white" textColor="text-black" >
+                <Button variant="default" bgColor="bg-white" textColor="text-black" className="hover:bg-white/70" >
                     View all projects
                     <div className="rounded-full p-1 border border-[#F2F4F8]"><MdArrowOutward className='text-lg' /></div>
                 </Button>

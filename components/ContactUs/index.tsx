@@ -16,14 +16,17 @@ const Contact = () => {
       <div className="grid md:grid-cols-2 gap-20">
         {/* Left Content */}
         <div className="max-w-2xl">
+          <div className="ml-[-7rem] md:ml-0">
           <SectionHeading text="Contactus" align="left" />
-          <h1 className="text-5xl font-bold mb-6 text-[#0F1115] ml-[9.5rem]">Let's collaborate</h1>
-          <p className="text-[#50576B] mb-8 ml-[9.5rem]">
+          </div>
+          
+          <h1 className="text-5xl font-bold md:mb-6 mb-2 text-[#0F1115] md:ml-[9.5rem] mx-10">Let's collaborate</h1>
+          <p className="text-[#50576B] mb-8 md:ml-[9.5rem] mx-10">
             Reach out and let’s explore how we can bring your ideas to life. Whether
             you’re ready to begin or just have questions.
           </p>
 
-          <div className="mb-6 ml-[9.5rem]">
+          <div className="mb-6 md:ml-[9.5rem] mx-10">
             <p className="text-[#23A0E0] font-bold text-lg">+91 9668906621</p>
             <p className="text-[#23A0E0] text-3xl font-semibold">info@sparkradix.in</p>
             <p className="text-gray-600 mt-2">
@@ -31,7 +34,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-2 mt-20 text-sm ml-[9.5rem] font-semibold">
+          <div className="flex flex-col gap-2 md:mt-20 text-sm md:ml-[9.5rem] mx-10 font-semibold">
             <a href="#" className="text-black hover:underline flex items-center gap-1">
               <MdArrowOutward className="text-sm font-semibold" /> Facebook
             </a>
@@ -45,7 +48,7 @@ const Contact = () => {
         </div>
 
         {/* Right Content - Contact Form */}
-        <form className="flex flex-col gap-4 mt-7 max-w-md">
+        <form className="flex flex-col gap-4 md:mt-7 max-w-md mx-10">
           <div className="relative">
             <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <Input type="text" placeholder="Name" className="pl-10" />
