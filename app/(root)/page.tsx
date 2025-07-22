@@ -6,7 +6,6 @@ import FAQ from "@/components/FAQ"
 import Impact from "@/components/Impact"
 import OurWork from "@/components/OurWork"
 
-
 const HomePage = async () => {
   return (
     <div >
@@ -17,7 +16,6 @@ const HomePage = async () => {
       <Testimonial />
       <OurProcess />
       <FAQ />
-      
     </div>
   );
 };
