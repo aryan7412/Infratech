@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from "react";
 import Heading from "@/components/Heading/Heading";
 import SectionHeading from "@/components/Heading/SectionHeading";
 import { TbBorderCornerSquare } from "react-icons/tb";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface Step {
   title: string;
@@ -50,8 +52,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ number, title, description 
       {number.toString().padStart(2, "0")}
     </div>
 
-    <div className="p-4 bg-white w-full">
-      <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 relative">
+    {/* Content */}
+    <div className="pb-14" data-aos="fade-up">
+      <h3 className="text-lg font-bold text-black flex items-center gap-2 relative">
         {title}
         <TbBorderCornerSquare
           className="absolute -top-1 -right-1 text-[#2f89de] text-xs rotate-90"
@@ -68,6 +71,8 @@ const ProcessSection: React.FC = () => {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+
     const handleScroll = () => {
       const container = containerRef.current;
       const progressBar = progressBarRef.current;
@@ -78,16 +83,15 @@ const ProcessSection: React.FC = () => {
       const windowHeight = window.innerHeight;
 
       const totalHeight = container.offsetHeight;
-      const scrollStart = windowHeight; // When the top of the container reaches bottom of viewport
-      const scrollEnd = -totalHeight;   // When the bottom of the container reaches top of viewport
+      const scrollStart = windowHeight;
+      const scrollEnd = -totalHeight;
 
-      // Scroll progress between 0 and 1
       const progress = Math.min(
         1,
         Math.max(0, (scrollStart - rect.top) / (scrollStart - scrollEnd))
       );
 
-      const maxLineHeight = totalHeight * 0.85; // Match the gray line height
+      const maxLineHeight = totalHeight * 0.85;
       const lineHeight = progress * maxLineHeight;
 
       progressBar.style.height = `${lineHeight}px`;
@@ -95,7 +99,7 @@ const ProcessSection: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
-    handleScroll(); // run initially
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -104,42 +108,40 @@ const ProcessSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#F6F7F9] py-20 m-0 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
-        {/* Left Content */}
-        <div className="max-w-lg">
-          <SectionHeading className="sticky top-0" text="Our process" />
-          <Heading text1="A proven & effective " text2="workflow process." />
-          <p className="mt-10 text-[#50576B]">
-            We dive deep into your project's objectives, stakeholders, and
-            challenges to craft tailored strategies that deliver impactful
-            solutions.
-          </p>
-        </div>
+    <div className="flex flex-col md:flex-row gap-40 bg-[#F6F7F9] mt-10">
+      {/* Left Section */}
+      <div className="max-w-lg">
+        <SectionHeading text="Our process" align="left" />
+        <Heading text1="A proven & effective " text2="workflow process." align="left" />
+        <p className="ml-40 mt-10 text-[#50576B]">
+          We dive deep into your project's objectives, stakeholders, and
+          challenges to craft tailored strategies that deliver impactful
+          solutions.
+        </p>
+      </div>
 
-        {/* Right Timeline */}
-        <div className="relative w-full" ref={containerRef}>
-          {/* Gray line */}
-          <div className="absolute left-20 top-10 w-1 h-[85%] bg-gray-200" />
+      {/* Right Section */}
+      <div className="relative w-full" ref={containerRef}>
+        {/* Gray background line */}
+        <div className="absolute left-6 top-10 w-1 h-[85%] bg-gray-200" />
 
-          {/* Scroll-synced Blue line */}
-          <div
-            ref={progressBarRef}
-            className="absolute left-20 top-10 w-1 bg-blue-500 rounded"
-            style={{ height: "0px" }}
-          />
+        {/* Animated scroll-based blue line */}
+        <div
+          ref={progressBarRef}
+          className="absolute left-6 top-10 w-1 bg-blue-500 rounded"
+          style={{ height: "0px" }}
+        />
 
-          {/* Timeline Items */}
-          <div className="flex flex-col gap-16 pl-14">
-            {steps.map((step, index) => (
-              <TimelineItem
-                key={index}
-                number={index + 1}
-                title={step.title}
-                description={step.description}
-              />
-            ))}
-          </div>
+        {/* Timeline Items */}
+        <div className="flex flex-col gap-16 pl-14">
+          {steps.map((step, index) => (
+            <TimelineItem
+              key={index}
+              number={index + 1}
+              title={step.title}
+              description={step.description}
+            />
+          ))}
         </div>
       </div>
     </div>

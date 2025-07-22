@@ -1,11 +1,10 @@
-"use client";
+"use client"
 
 import SectionHeading from "@/components/Heading/SectionHeading";
 import Heading from "@/components/Heading/Heading";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { MdArrowOutward } from "react-icons/md";
-import { useState } from "react";
-import { IoIosAdd, IoIosRemove } from "react-icons/io";
 
 const faqs = [
   {
@@ -45,55 +44,18 @@ const faqs = [
   },
 ];
 
-const FAQItem = ({
-  question,
-  answer,
-  isOpen,
-  onToggle,
-}: {
-  question: string;
-  answer: string;
-  isOpen: boolean;
-  onToggle: () => void;
-}) => (
-  <div
-    className="border-b border-[#E6E8EC] py-6 cursor-pointer max-w-2xl"
-    onClick={onToggle}
-  >
-    <div className="flex justify-between items-center">
-      <h4 className="text-sm md:text-base font-semibold text-[#1B1E29]">
-        {question}
-      </h4>
-      <div className="text-xl text-[#1B1E29] transition-transform duration-300">
-        {isOpen ? <IoIosRemove /> : <IoIosAdd />}
-      </div>
-    </div>
-
-    <div
-      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-        isOpen ? "max-h-[1000px] mt-3" : "max-h-0"
-      }`}
-    >
-      <p className="text-sm text-[#4B5563]">{answer}</p>
-    </div>
-  </div>
-);
-
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
-    <div className="flex flex-col md:flex-row bg-[#F6F7F9] py-20 px-4 ml-20 md:px-20 gap-y-10 md:gap-x-20">
+    <div className="flex flex-col md:flex-row bg-[#F6F7F9] pb-20 gap-44 mt-20">
       {/* Left Section */}
-      <div className="max-w-lg w-full">
+      <div className="max-w-lg ">
         <SectionHeading text="FAQ's" align="left" />
         <Heading text1="Have questions," text2="We got answers." align="left" />
-        <p className="mt-5 text-[#50576B] text-sm">
+        <p className="ml-40 mt-5 text-[#50576B] text-sm">
           Everything you need to know about our process, and how we deliver
           results.
         </p>
-
-        <div className="mt-32 bg-white rounded-3xl p-7 shadow-xl shadow-gray-200 w-full">
+        <div className="mt-[19.25rem] bg-white w-[28.125rem] h-[10.75rem] ml-40 rounded-3xl p-7 shadow-md">
           <p className="text-xl font-bold mb-2">Can't find your answer?</p>
           <p className="text-sm mb-4 text-[#6B7280]">
             Get in touch with our support team
@@ -113,18 +75,24 @@ const FAQSection = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex-1 mt-10 space-y-4">
-        {faqs.map((faq, index) => (
-          <FAQItem
-            key={index}
-            question={faq.question}
-            answer={faq.answer}
-            isOpen={openIndex === index}
-            onToggle={() =>
-              setOpenIndex(openIndex === index ? null : index)
-            }
-          />
-        ))}
+      <div className="flex-1 mt-10">
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue="item-0"
+          className="w-[600px]"
+        >
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger className="text-left">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-sm text-[#4B5563]">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </div>
   );
