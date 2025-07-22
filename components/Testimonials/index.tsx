@@ -120,7 +120,7 @@ const Testimonials = () => {
                         </p>
                         <div className="flex items-center gap-3 mt-4">
                             <Image
-                                src="/testimonials/rajesh-patel.jpg"
+                                src=""
                                 alt="Mr. Rajesh Patel"
                                 width={40}
                                 height={40}

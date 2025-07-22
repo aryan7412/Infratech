@@ -5,7 +5,7 @@ import SectionHeading from "@/components/Heading/SectionHeading";
 import { TbBorderCornerSquare } from "react-icons/tb";
 import { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 
 interface Step {
   title: string;
