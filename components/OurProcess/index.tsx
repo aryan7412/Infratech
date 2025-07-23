@@ -4,8 +4,11 @@ import React, { useEffect, useRef } from "react";
 import Heading from "@/components/Heading/Heading";
 import SectionHeading from "@/components/Heading/SectionHeading";
 import { TbBorderCornerSquare } from "react-icons/tb";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 interface Step {
   title: string;
@@ -110,7 +113,8 @@ const ProcessSection: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row gap-40 bg-[#F6F7F9] mt-10">
       {/* Left Section */}
-      <div className="max-w-lg">
+      <div className="max-w-lg ">
+
         <SectionHeading text="Our process" align="left" />
         <Heading text1="A proven & effective " text2="workflow process." align="left" />
         <p className="ml-40 mt-10 text-[#50576B]">

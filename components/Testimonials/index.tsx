@@ -120,7 +120,7 @@ const Testimonials = () => {
                         </p>
                         <div className="flex items-center gap-3 mt-4">
                             <Image
-                                src="/testimonials/rajesh-patel.jpg"
+                                src=""
                                 alt="Mr. Rajesh Patel"
                                 width={40}
                                 height={40}
@@ -162,7 +162,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Right Section */}
-                    <Button variant="default" bgColor="bg-white" textColor="text-black">
+                    <Button variant="default" bgColor="bg-white" textColor="text-black" className="hover:bg-white/70">
                         View all reviews
                         <div className="rounded-full p-1 border border-[#F2F4F8] ml-2">
                             <MdArrowOutward className="text-lg" />
