@@ -7,13 +7,12 @@ import ProjectCard from "@/components/Cards"
 const Hero = () => {
   return (
     <div>
-      <div className="relative w-full h-[753px] overflow-hidden">
+      <div className="relative w-full md:h-[753px] h-[454px] overflow-hidden ">
         {/* Background Image */}
         <Image
           src="/HeroPage.png"
           alt="Homepage Image"
           layout="fill"
-          objectFit="cover"
           priority
           className="rounded-b-[3rem]"
         />
