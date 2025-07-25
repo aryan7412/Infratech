@@ -11,60 +11,60 @@ import { useEffect } from 'react';
 const index = () => {
     useEffect(() => {
         AOS.init({
-          duration: 1000,
-          once: true
+            duration: 1000,
+            once: true
         });
-      }, []);
+    }, []);
     return (
-        <div className="bg-[#F6F7F9] mt-20">
-            <div data-aos="fade-up">
-            <SectionHeading text="Our Services" align="left" />
-            <Heading text1="From ideas into high-impact infrastructure." text2="Expertise that Inspires and Delivers" align="left" />
+        <div className="bg-[#F6F7F9] md:mt-20 mt-10">
+            <div data-aos="fade-up" className="md:ml-0 ml-[-8rem]">
+                <SectionHeading text="Our Services" align="left" />
+                <Heading text1="From ideas into high-impact infrastructure." text2="Expertise that Inspires and Delivers" align="left" />
             </div>
 
             {/* Row 1 */}
-            <div className="flex gap-4 ml-40 mt-16">
+            <div className="md:flex gap-4 md:ml-40 ml-6 mt-16">
                 {/* Electrical Infrastructure */}
-                <div className="w-[23rem] h-[40.25rem] bg-[#FEFEFE] rounded-3xl" data-aos="fade-up" data-aos-delay="500" >
-                    <div className="pt-7 px-7 ">
+                <div className="md:w-[23rem] w-[27rem] md:h-[40.25rem] h-[30rem] bg-[#FEFEFE] rounded-3xl flex flex-row md:flex-col" data-aos="fade-up" data-aos-delay="500" >
+                    <div className="pt-7 md:px-7 pl-4">
                         <div className="text-2xl font-bold text-[#0F1115] ">Electrical Infrastructure</div>
                         <div className="text-sm text-[#50576B] mt-2">From designing and installing power distribution systems to maintaining high-voltage networks, we ensure reliable and efficient electrical solutions for urban and rural projects.</div>
                     </div>
                     <Image
                         src="/Electrical Tower.png"
                         alt="Homepage Image"
-                        width="275"
-                        height="275"
-                        className="mt-10 mx-auto"
+                        width={275}
+                        height={275}
+                        className="mt-9 md:ml-16 ml-8"
                     />
                 </div>
 
                 {/* Right Column */}
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 md:mt-0 mt-6">
                     {/* Civil Construction */}
-                    <div className="w-[47rem] h-[19.625rem] bg-[#FEFEFE] rounded-3xl" data-aos="fade-up">
+                    <div className="md:w-[47rem] w-[27rem] h-[19.625rem] bg-[#FEFEFE] rounded-3xl" data-aos="fade-up">
                         <div className="pt-7 px-7 ">
                             <div className="text-2xl font-bold text-[#0F1115] ">Civil Construction</div>
                             <div className="text-sm text-[#50576B] mt-2">We build robust infrastructure, including roads, bridges, and public facilities, with a focus on durability and precision to meet government standards.</div>
                         </div>
                         <div className="flex">
-                            <div className="bg-[#F6F7F9] text-[#50576B] text-sm font-medium w-20 h-9 rounded-full mt-10 px-4 ml-7 flex items-center justify-center">Design</div>
+                            <div className="bg-[#F6F7F9] text-[#50576B] text-sm font-medium w-20 h-9 rounded-full md:mt-10 mt-4 px-4 ml-7 flex items-center justify-center">Design</div>
                             <Image
                                 src="/House1.png"
                                 alt="Homepage Image"
                                 width="350"
                                 height="200"
-                                className="ml-[18.35rem] mx-auto rounded-br-3xl"
+                                className="md:ml-[18.35rem] ml-[5.5rem] md:mt-0 mt-14 mx-auto rounded-br-3xl md:w-[350px] w-60 md:h-[200px] h-32"
                             />
                         </div>
                     </div>
 
                     {/* Solar Energy Solutions */}
-                    <div className="w-[47rem] h-[19.625rem] bg-[#FEFEFE] rounded-3xl px-7 py-7 flex items-center justify-between" data-aos="fade-up" data-aos-delay="500">
+                    <div className="md:w-[47rem] w-[27rem] md:h-[19.625rem] h-96 bg-[#FEFEFE] rounded-3xl px-7 py-7 flex items-center justify-between" data-aos="fade-up" data-aos-delay="500">
                         {/* Left Section: Text + Button */}
                         <div className="flex flex-col justify-between h-full max-w-[22rem]">
                             <div>
-                                <div className="text-2xl font-bold text-[#0F1115]">Solar Energy Solutions</div>
+                                <div className="text-2xl font-bold text-[#0F1115] md:mt-0 mt-[-1rem]">Solar Energy Solutions</div>
                                 <p className="text-sm text-[#50576B] mt-2">
                                     Solar power plants, rooftop solar installations, and solar-integrated infrastructure projects. We help you harness clean energy, reducing carbon footprints and ensuring long-term energy security.
                                 </p>
@@ -83,7 +83,7 @@ const index = () => {
                             alt="Solar Panel and Meter"
                             width={350}
                             height={200}
-                            className="object-contain gap-x-10"
+                            className="object-contain gap-x-10 md:w-[350px] w-[300px] md:h-[200px] h-[220px]"
                         />
                     </div>
 
@@ -91,24 +91,24 @@ const index = () => {
             </div>
 
             {/* Row 2 */}
-            <div className="flex gap-4 ml-40 mt-4 ">
+            <div className="flex md:flex-row flex-col gap-4 md:ml-40 ml-6 mt-4 ">
                 {/* Project Management */}
-                <div className="w-[47rem] h-[19.375rem] bg-[#FEFEFE] rounded-3xl relative" data-aos="fade-up" data-aos-delay="400">
-                    <div className="pt-7 px-7 ">
-                        <div className="text-2xl font-bold text-[#0F1115] ">Project Management, Maintenance & <br /> Upgrades</div>
-                        <div className="text-sm text-[#50576B] mt-2">We provide ongoing support to keep <br /> infrastructure running smoothly, from <br /> routine maintenance to modernizing <br /> existing systems.</div>
+                <div className="md:w-[47rem] w-[27rem] md:h-[19.375rem] h-[22rem] bg-[#FEFEFE] rounded-3xl relative" data-aos="fade-up" data-aos-delay="400">
+                    <div className="pt-7 md:px-7 px-5">
+                        <div className="text-2xl font-bold text-[#0F1115] md:max-w-lg max-w-2xl ">Project Management, Maintenance & Upgrades</div>
+                        <div className="text-sm text-[#50576B] mt-2 md:max-w-64 max-w-2xl">We provide ongoing support to keep infrastructure running smoothly, from routine maintenance to modernizing existing systems.</div>
                     </div>
-                    <Image 
-                    src="/Construction.png"
-                    alt=""
-                    width={500}
-                    height={150}
-                    className="rounded-br-3xl absolute bottom-0 right-0"
+                    <Image
+                        src="/Construction.png"
+                        alt=""
+                        width={500}
+                        height={150}
+                        className="rounded-br-3xl absolute bottom-0 right-0 md:w-[500px] w-[410px]"
                     />
                 </div>
 
                 {/* Call to Action Box */}
-                <div className="w-[23rem] h-[19.375rem] bg-[#145089] rounded-3xl relative" data-aos="fade-up" data-aos-delay="700">
+                <div className="md:w-[23rem] w-[27rem] h-[19.375rem] bg-[#145089] rounded-3xl relative" data-aos="fade-up" data-aos-delay="700">
                     <Image
                         src="/Dots.png"
                         alt="Dots bg"
