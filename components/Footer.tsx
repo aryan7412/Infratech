@@ -88,7 +88,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm font-semibold">
               <h4 className="text-black font-semibold mb-3">Company</h4>
               <Link href="/about">About Us</Link>
-              <Link href="/">Pricing</Link>
+              <Link href="/#">Pricing</Link>
               <Link href="/contact">Contact Us</Link>
               <Link href="/project">Projects</Link>
             </div>
