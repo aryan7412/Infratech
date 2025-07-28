@@ -2,6 +2,7 @@
 import SectionHeading from "@/components/Heading/SectionHeading"
 import Heading from "@/components/Heading/Heading"
 import Image from "next/image"
+import Link from "next/link";
 import { Button } from "@/components/ui/button"
 import { MdArrowOutward } from "react-icons/md"
 import AOS from 'aos';
@@ -69,12 +70,15 @@ const index = () => {
                                     Solar power plants, rooftop solar installations, and solar-integrated infrastructure projects. We help you harness clean energy, reducing carbon footprints and ensuring long-term energy security.
                                 </p>
                             </div>
-                            <Button variant="default" bgColor="bg-white" textColor="text-black" className="mt-4 w-fit border border-[#D9DFE8]">
-                                Contact us
-                                <div className="rounded-full p-1 border border-[#F2F4F8] ml-2">
-                                    <MdArrowOutward className="text-lg" />
-                                </div>
-                            </Button>
+                            <Link
+                                href="/contact">
+                                <Button variant="default" bgColor="bg-white" textColor="text-black" className="mt-4 w-fit border border-[#D9DFE8]">
+                                    Contact us
+                                    <div className="rounded-full p-1 border border-[#F2F4F8] ml-2">
+                                        <MdArrowOutward className="text-lg" />
+                                    </div>
+                                </Button>
+                            </Link>
                         </div>
 
                         {/* Right Section: Image */}
@@ -121,10 +125,13 @@ const index = () => {
                             Sustainable Energy Solutions,
                             <div className="text-[#A1B9D0]">Unstoppable Growth</div>
                             <div className="mt-5">
-                                <Button variant="default" bgColor="bg-white" textColor="text-black">
-                                    Contact Us
-                                    <div className="rounded-full p-1 border border-[#F2F4F8]"><MdArrowOutward className='text-lg' /></div>
-                                </Button>
+                                <Link
+                                    href="/contact">
+                                    <Button variant="default" bgColor="bg-white" textColor="text-black">
+                                        Contact Us
+                                        <div className="rounded-full p-1 border border-[#F2F4F8]"><MdArrowOutward className='text-lg' /></div>
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>

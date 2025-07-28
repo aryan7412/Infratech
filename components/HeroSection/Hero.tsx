@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Button } from "../ui/button"
 import { MdArrowOutward } from "react-icons/md"
 import ProjectCard from "@/components/Cards"
+import Link from "next/link"
 
 
 const Hero = () => {
@@ -26,17 +27,22 @@ const Hero = () => {
             Civil & Electrical Infrastructure Experts Delivering Smart, Scalable & <br /> Government-Grade Solutions.
           </p>
 
-          <Button
-            variant="default"
-            bgColor="bg-black"
-            textColor="text-white"
-            className="hover:bg-black/85"
-          >
-            Build Tomorrow. Today.
-            <div className="bg-[#333437] rounded-full p-1 border border-[#545457]">
-              <MdArrowOutward className="text-white text-sm" />
-            </div>
-          </Button>
+          <Link
+            href="/contact">
+            <Button
+              variant="default"
+              bgColor="bg-black"
+              textColor="text-white"
+              className="hover:bg-black/85"
+            >
+
+              Build Tomorrow. Today.
+
+              <div className="bg-[#333437] rounded-full p-1 border border-[#545457]">
+                <MdArrowOutward className="text-white text-sm" />
+              </div>
+            </Button>
+          </Link>
         </div>
 
         {/* Overlay background tint if needed */}

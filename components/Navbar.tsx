@@ -8,22 +8,22 @@ const Header = () => {
     return (
         <div className='flex justify-center translate-y-6 z-50 sticky top-0'>
             <div className="bg-[#145089] flex w-[734px] h-[56px] rounded-full text-white items-center justify-center gap-6 px-4">
-                <Link href="/About">
+                <Link href="/about">
                     <div className="flex items-center">About</div>
                 </Link>
 
-                <Link href="/Company">
+                <Link href="/">
                     <div className="flex items-center gap-1">
                         Company
                         <MdKeyboardArrowDown className="text-xl" />
                     </div>
                 </Link>
 
-                <Link href="/Contact">
+                <Link href="/contact">
                     <div className="flex items-center">Contact</div>
                 </Link>
 
-                <Link href="/Project">
+                <Link href="/project">
                     <div className="flex items-center gap-2">
                         Projects
                         <div className="bg-[#3A6C9C] flex items-center justify-center rounded-full px-2 text-sm">

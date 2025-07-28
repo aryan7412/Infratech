@@ -2,6 +2,7 @@
 
 import SectionHeading from '@/components/Heading/SectionHeading';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { MdArrowOutward, MdCopyright } from 'react-icons/md';
 import { FiArrowUpRight } from 'react-icons/fi';
@@ -46,12 +47,15 @@ const Footer = () => {
             height={20}
           />
         </div>
+        <Link
+        href="/contact">
         <Button variant="default" bgColor="bg-black" textColor="text-white" className='hover:bg-black/85'>
           Build Tomorrow. Today.
           <div className="rounded-full p-1 border border-[#545457] bg-[#333437] ml-2">
             <MdArrowOutward className="text-lg" />
           </div>
         </Button>
+        </Link>
         <Image
           src="/Sparkradix_Logo.png"
           alt='Sparkradix_Logo'
@@ -83,10 +87,10 @@ const Footer = () => {
           <div className='flex gap-32'>
             <div className="space-y-3 text-sm font-semibold">
               <h4 className="text-black font-semibold mb-3">Company</h4>
-              <p>About Us</p>
-              <p>Pricing</p>
-              <p>Contact Us</p>
-              <p>Projects</p>
+              <Link href="/about">About Us</Link>
+              <Link href="/">Pricing</Link>
+              <Link href="/contact">Contact Us</Link>
+              <Link href="/project">Projects</Link>
             </div>
 
             {/* Social Links */}
