@@ -6,6 +6,7 @@ import FAQ from "@/components/FAQ"
 import Impact from "@/components/Impact"
 import OurWork from "@/components/OurWork"
 
+
 const HomePage = async () => {
   return (
     <div >

@@ -8,10 +8,10 @@ import { TbMessageChatbotFilled } from "react-icons/tb";
 
 const Testimonials = () => {
     return (
-        <div className="bg-[#F6F7F9] pb-16 pt-10 px-4 mt-10">
+        <div className="bg-[#F6F7F9] w-full pb-16 pt-10 px-4 mt-10">
             <div data-aos="fade-up">
             <SectionHeading text="Testimonials" align="center" />
-            <div className="mr-32">
+            <div className="md:mr-32 mr-0">
             <Heading
                 text1="Results that speaks volume"
                 text2="Read success stories"
@@ -28,9 +28,9 @@ const Testimonials = () => {
             </div>
 
             {/* Grid of Testimonials */}
-            <div className="grid grid-cols-1 md:grid-cols-2 mt-10 mx-auto ml-36 max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mx-auto md:ml-36 max-w-6xl">
                 {/* Left column (Card 1 spans 2 rows) */}
-                <div className="row-span-2 w-[35rem] h-[35.5rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
+                <div className="md:row-span-2 md:w-[35rem] min-w-[120px] md:h-[35.5rem] h-[25rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
                     <div>
                         <div className="text-5xl font-bold text-[#316698]">10X</div>
                         <div className="text-lg text-[#50576B] font-bold mt-1 mb-4">Boost in energy efficiency</div>
@@ -57,7 +57,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Card 2 (Top Right) */}
-                <div className="w-[35rem] h-[17.25rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md mb-[1.5rem]" data-aos="fade-up">
+                <div className=" md:w-[35rem] min-w-[120px] min-h-[17.25rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md mb-[1.5rem]" data-aos="fade-up">
                     <div>
                         <div className="flex gap-x-3">
                         <div className="text-3xl font-bold text-[#316698]">2X</div>
@@ -86,9 +86,9 @@ const Testimonials = () => {
                 </div>
 
                 {/* Row of 2 small cards below */}
-                <div className="col-span-1 grid grid-cols-2 ml-4">
+                <div className="md:col-span-1 grid md:grid-cols-2 gap-6 grid-cols-1">
                     {/* Card 3 */}
-                    <div className="w-[16.15rem] h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <div className="md:w-[16.15rem] min-w-[150px] min-h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
                         <RiDoubleQuotesR className="text-pink-400 text-2xl" />
                         <p className="text-sm text-[#50576B] mt-3">
                             Working with Sparkradix on our industrial park was a game-changer.
@@ -111,7 +111,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Card 4 */}
-                    <div className="w-[16.15rem] h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md ml-[0.4rem]" data-aos="fade-up" data-aos-delay="500">
+                    <div className="md:w-[16.15rem] min-w-[150px] min-h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md ml-[0.4rem]" data-aos="fade-up" data-aos-delay="500">
                         <RiDoubleQuotesR className="text-pink-400 text-2xl" />
                         <p className="text-sm text-[#50576B] mt-3">
                             Working with Sparkradix on our industrial park was a game-changer.
@@ -137,14 +137,14 @@ const Testimonials = () => {
 
 
             {/* Bottom Section */}
-            <div className="mt-12 px-4 ml-32">
-                <div className="flex flex-col md:flex-row items-center max-w-7xl mx-auto">
+            <div className="mt-12 px-4 md:ml-32 ml-5">
+                <div className="flex flex-col md:flex-row justify-center items-center max-w-7xl mx-auto">
 
                     {/* Left Section */}
-                    <div className="flex flex-wrap items-center gap-4 text-[#50576B] text-sm mr-[31.5rem]">
+                    <div className="flex flex-wrap justify-center items-center gap-4 text-[#50576B] text-sm md:mr-[31.5rem]">
                         <p className="whitespace-nowrap">1500 satisfied clients love our services</p>
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex  items-center gap-2">
                             <div className="bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm">
                                 <TbMessageChatbotFilled className="text-lg text-black" />
                             </div>
@@ -162,7 +162,10 @@ const Testimonials = () => {
                     </div>
 
                     {/* Right Section */}
-                    <Button variant="default" bgColor="bg-white" textColor="text-black" className="hover:bg-white/70">
+
+=======
+                    <Button className="mt-2 " variant="default" bgColor="bg-white" textColor="text-black">
+
                         View all reviews
                         <div className="rounded-full p-1 border border-[#F2F4F8] ml-2">
                             <MdArrowOutward className="text-lg" />

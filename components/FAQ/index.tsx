@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import SectionHeading from "@/components/Heading/SectionHeading";
 import Heading from "@/components/Heading/Heading";
