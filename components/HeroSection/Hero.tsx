@@ -1,19 +1,40 @@
+'use client'
+
 import Image from "next/image"
 import { Button } from "../ui/button"
 import { MdArrowOutward } from "react-icons/md"
 import ProjectCard from "@/components/Cards"
-
+import './Custom.css' // Import custom styles
+import { useEffect, useRef } from "react"
 
 const Hero = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const interval = setInterval(() => {
+      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+      if (scrollContainer.scrollLeft >= maxScroll) {
+        scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+      }
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
-      <div className="relative w-full h-[753px] overflow-hidden">
+      <div className="relative w-full md:h-[753px] h-[454px] overflow-hidden">
         {/* Background Image */}
         <Image
           src="/HeroPage.png"
           alt="Homepage Image"
           layout="fill"
-          objectFit="cover"
           priority
           className="rounded-b-[3rem]"
         />
@@ -42,61 +63,74 @@ const Hero = () => {
         {/* Overlay background tint if needed */}
         <div className="absolute bg-black/20 z-[1]" />
       </div>
-      {/* Bottom Section */}
-      <div className="gap-6 p-6 flex flex-row mt-10 bg-[#F6F7F9]">
+<div className="mt-10 bg-[#F6F7F9] overflow-hidden">
+  <div className="marquee">
+    <div className="marquee-content">
+      {[...Array(2)].map((_, i) => (
+        <div className="flex gap-6 px-6" key={i}>
+          <ProjectCard
+            image="/Demo.png"
+            title="OrbitCloud"
+            description="Web design · development"
+            metric="125% Boost in leads"
+            showArrow={false}
+          />
+          <ProjectCard
+            image="/Demo.png"
+            title="Cloudash"
+            description="Web design · development"
+            metric="+65% Customer sign-ups"
+            showArrow={false}
+          />
+          <ProjectCard
+            image="/Demo.png"
+            title="Asterisk inc"
+            description="Web design · development"
+            showArrow={false}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
-        <ProjectCard
-          image="/Demo.png"
-          title="OrbitCloud"
-          description="Web design · development"
-          metric="125% Boost in leads"
-          showArrow={false}
-        />
-        <ProjectCard
-          image="/Demo.png"
-          title="Cloudash"
-          description="Web design · development"
-          metric="+65% Customer sign-ups"
-          showArrow={false}
-        />
-        <ProjectCard
-          image="/Demo.png"
-          title="Asterisk inc"
-          description="Web design · development"
-          showArrow={false}
-        />
-      </div>
+
 
       {/* Our Trusted Partners */}
       <div className="bg-[#F6F7F9] mt-10">
-        <p className="text-[#697289] text-2xl text-center">Our Trusted Partners</p>
-        <div className="flex items-center justify-center gap-14 mt-4">
-          <Image
-            src="/NTPC.png"
-            alt=""
-            width={100}
-            height={20}
-          />
-          <Image
-            src="/TPNODL.png"
-            alt=""
-            width={120}
-            height={40}
-          />
-          <Image
-            src="/OdishaShasan.png"
-            alt=""
-            width={60}
-            height={20}
-          />
-          <Image
-            src="/Tata.png"
-            alt=""
-            width={80}
-            height={20}
-          />
-        </div>
-      </div>
+  <p className="text-[#697289] text-2xl text-center">Our Trusted Partners</p>
+  <div className="flex items-center justify-center gap-14 mt-4 flex-nowrap px-4 overflow-x-auto hide-scrollbar">
+    <Image
+      src="/NTPC.png"
+      alt="NTPC"
+      width={120}
+      height={40}
+      className="h-[20px] w-[60px] sm:h-[30px] sm:w-[80px] md:h-[40px] md:w-[120px] object-contain"
+    />
+    <Image
+      src="/TPNODL.png"
+      alt="TPNODL"
+      width={120}
+      height={60}
+      className="h-[25px] w-[70px] sm:h-[35px] sm:w-[90px] md:h-[60px] md:w-[120px] object-contain"
+    />
+    <Image
+      src="/OdishaShasan.png"
+      alt="Odisha Govt"
+      width={100}
+      height={60}
+      className="h-[20px] w-[40px] sm:h-[28px] sm:w-[50px] md:h-[60px] md:w-[100px] object-contain"
+    />
+    <Image
+      src="/Tata.png"
+      alt="TATA"
+      width={80}
+      height={60}
+      className="h-[20px] w-[50px] sm:h-[30px] sm:w-[60px] md:h-[60px] md:w-[80px] object-contain"
+    />
+  </div>
+</div>
+
     </div>
   )
 }

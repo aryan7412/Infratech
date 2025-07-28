@@ -46,7 +46,7 @@ interface TimelineItemProps {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ number, title, description }) => (
   <div className="relative flex items-center gap-6">
-    <div className="relative z-20 w-12 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center font-semibold text-gray-700">
+    <div className="relative md:mb-[88px] mb-[120px] z-20 w-12 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center font-semibold text-gray-700">
       {number.toString().padStart(2, "0")}
     </div>
 
@@ -68,49 +68,52 @@ const ProcessSection: React.FC = () => {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const container = containerRef.current;
-      const progressBar = progressBarRef.current;
+  const handleScroll = () => {
+    const container = containerRef.current;
+    const progressBar = progressBarRef.current;
 
-      if (!container || !progressBar) return;
+    if (!container || !progressBar) return;
 
-      const rect = container.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+    const containerRect = container.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
-      const totalHeight = container.offsetHeight;
-      const scrollStart = windowHeight; // When the top of the container reaches bottom of viewport
-      const scrollEnd = -totalHeight;   // When the bottom of the container reaches top of viewport
+    const containerTop = containerRect.top;
+    const containerHeight = container.offsetHeight;
 
-      // Scroll progress between 0 and 1
-      const progress = Math.min(
-        1,
-        Math.max(0, (scrollStart - rect.top) / (scrollStart - scrollEnd))
-      );
+    // Total scrollable distance of the container in viewport
+    const scrollable = windowHeight + containerHeight;
 
-      const maxLineHeight = totalHeight * 0.85; // Match the gray line height
-      const lineHeight = progress * maxLineHeight;
+    // How much has been scrolled relative to container's visibility
+    const progress = Math.min(
+      1,
+      Math.max(0, (windowHeight - containerTop) / scrollable)
+    );
 
-      progressBar.style.height = `${lineHeight}px`;
-    };
+    // Actual height of blue bar within gray bar (85% of total height)
+    const maxHeight = containerHeight * 0.85;
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll(); // run initially
+    progressBar.style.height = `${progress * maxHeight}px`;
+  };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll);
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", handleScroll);
+  };
+}, []);
 
   return (
     <div className="bg-[#F6F7F9] py-20 m-0 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
+      <div className="max-w-7xl relative mx-auto flex flex-col md:flex-row gap-20">
         {/* Left Content */}
-        <div className="max-w-lg">
-          <SectionHeading className="sticky top-0" text="Our process" />
-          <Heading text1="A proven & effective " text2="workflow process." />
-          <p className="mt-10 text-[#50576B]">
+        <div className="max-w-lg sticky top-20 self-start">
+          
+          <SectionHeading className="md:ml-0 ml-4" text="Our process" />
+          <Heading className1="text-xl md:text-4xl" text1="A proven & effective " className2="text-xl md:text-4xl" text2="workflow process." />
+          <p className="md:mt-10 mt-2 md:text-sm text-xs text-[#50576B]">
             We dive deep into your project's objectives, stakeholders, and
             challenges to craft tailored strategies that deliver impactful
             solutions.
@@ -120,17 +123,17 @@ const ProcessSection: React.FC = () => {
         {/* Right Timeline */}
         <div className="relative w-full" ref={containerRef}>
           {/* Gray line */}
-          <div className="absolute left-20 top-10 w-1 h-[85%] bg-gray-200" />
+          <div className="absolute md:left-20 left-5 top-5 w-1 h-[85%] bg-gray-200" />
 
           {/* Scroll-synced Blue line */}
           <div
             ref={progressBarRef}
-            className="absolute left-20 top-10 w-1 bg-blue-500 rounded"
+            className="absolute md:left-20 left-5 top-5 w-1 bg-blue-500 rounded"
             style={{ height: "0px" }}
           />
 
           {/* Timeline Items */}
-          <div className="flex flex-col gap-16 pl-14">
+          <div className="flex  flex-col gap-16 md:pl-14">
             {steps.map((step, index) => (
               <TimelineItem
                 key={index}
@@ -141,6 +144,7 @@ const ProcessSection: React.FC = () => {
             ))}
           </div>
         </div>
+        
       </div>
     </div>
   );

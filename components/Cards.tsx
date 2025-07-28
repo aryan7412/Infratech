@@ -21,14 +21,14 @@ export default function ProjectCard({
   showArrow = true,
 }: ProjectCardProps) {
   return (
-    <div className="bg-white rounded-3xl shadow-md overflow-hidden w-[550px] h-[460px] flex flex-col justify-between transition relative">
+    <div className="bg-white rounded-3xl shadow-md overflow-hidden  md:w-[550px] max-w-[400px] h-[460px] flex flex-col justify-between transition relative">
       {/* Image Section */}
       <Image
         src={image}
         alt={title ?? "Project image"}
         width={522}
         height={348}
-        className={`object-contain w-[522px] h-[348px] mt-4 rounded-3xl ${isMockup ? "p-6" : "p-4"}`}
+        className={`object-contain md:w-[522px] w-full h-[348px] mt-4 rounded-3xl ${isMockup ? "p-6" : "p-4"}`}
       />
 
 
@@ -51,7 +51,7 @@ export default function ProjectCard({
         )}
 
           {metric && (
-            <p className="text-sm text-[#697289] font-medium ml-16">{metric}</p>
+            <p className="text-sm text-[#697289] font-medium md:ml-16">{metric}</p>
           )}
         </div>
       </div>

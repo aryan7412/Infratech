@@ -17,8 +17,8 @@ const index = () => {
       }, []);
     return (
         <div className="bg-[#F6F7F9] mt-20">
-            <div data-aos="fade-up" className="ml-40">
-            <SectionHeading text="Our Services" align="left" className="ml-0" />
+            <div data-aos="fade-up">
+            <SectionHeading text="Our Services" align="left" />
             <Heading text1="From ideas into high-impact infrastructure." text2="Expertise that Inspires and Delivers" align="left" />
             </div>
 
