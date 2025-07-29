@@ -70,34 +70,36 @@ const Hero = () => {
 
       {/* Marquee section */}
       <div className="mt-10 bg-[#F6F7F9] overflow-hidden">
-        <div className="marquee" ref={scrollRef}>
-          <div className="marquee-content">
-            {[...Array(2)].map((_, i) => (
-              <div className="flex gap-6 px-6" key={i}>
-                <ProjectCard
-                  image="/Demo.png"
-                  title="OrbitCloud"
-                  description="Web design · development"
-                  metric="125% Boost in leads"
-                  showArrow={false}
-                />
-                <ProjectCard
-                  image="/Demo.png"
-                  title="Cloudash"
-                  description="Web design · development"
-                  metric="+65% Customer sign-ups"
-                  showArrow={false}
-                />
-                <ProjectCard
-                  image="/Demo.png"
-                  title="Asterisk inc"
-                  description="Web design · development"
-                  showArrow={false}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="marquee">
+  <div className="marquee-content">
+    {/* Duplicate twice for seamless looping */}
+    {[...Array(2)].map((_, i) => (
+      <div className="flex gap-6 px-6" key={i}>
+        <ProjectCard
+          image="/Demo.png"
+          title="OrbitCloud"
+          description="Web design · development"
+          metric="125% Boost in leads"
+          showArrow={false}
+        />
+        <ProjectCard
+          image="/Demo.png"
+          title="Cloudash"
+          description="Web design · development"
+          metric="+65% Customer sign-ups"
+          showArrow={false}
+        />
+        <ProjectCard
+          image="/Demo.png"
+          title="Asterisk inc"
+          description="Web design · development"
+          showArrow={false}
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
       </div>
 
       {/* Our Trusted Partners */}

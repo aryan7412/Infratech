@@ -51,7 +51,7 @@ const AboutPage = () => {
     <div className="md:mt-40 mt-[160px]" data-aos="fade-up">
       {/* About Section */}
       <SectionHeading text="About us" align="center" />
-      <div className="md:mr-36 ml-[-9rem] md:ml-0">
+      <div className="md:mr-36  md:ml-0">
         <Heading text1="We take pride in delivering" text2="Exceptional results" align="center" />
       </div>
       <p className="text-[#c7d0ea] text-center max-w-6xl md:ml-[9rem] mt-7">

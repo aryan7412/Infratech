@@ -9,6 +9,7 @@ interface ProjectCardProps {
   metric?: string;
   isMockup?: boolean;
   showArrow?: boolean;
+  cardWidth?: string;
 }
 
 export default function ProjectCard({
@@ -19,9 +20,10 @@ export default function ProjectCard({
   metric,
   isMockup = false,
   showArrow = true,
+  cardWidth = "max-w-[450px]",
 }: ProjectCardProps) {
   return (
-    <div className="bg-white rounded-3xl shadow-md overflow-hidden  md:w-[550px] max-w-[400px] h-[460px] flex flex-col justify-between transition relative">
+    <div className={`bg-white rounded-3xl shadow-md overflow-hidden  w-[550px] ${cardWidth || "max-w-[450px]" } h-[460px] flex flex-col justify-between transition relative`}>
       {/* Image Section */}
       <Image
         src={image}

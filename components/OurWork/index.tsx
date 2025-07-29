@@ -26,22 +26,24 @@ const Index = () => {
         </div>
       </div>
 
-            <div className="flex ml-40 gap-20" data-aos="fade-up">
-                <p className="mt-4 mr-[21rem]">See how we’ve helped clients turn ambitious visions into tangible, impactful <br /> infrastructure.</p>
-                <Button variant="default" bgColor="bg-white" textColor="text-black" >
+            <div className="flex md:flex-row flex-col md:ml-40 ml-3 md:gap-20 gap-3 justify-start items-start" data-aos="fade-up">
+                <p className="mt-4 md:mr-[21rem] mr-0">See how we’ve helped clients turn ambitious visions into tangible, impactful <br /> infrastructure.</p>
+                <Button className="md:w-[168px] w-25 h-[40px]  md:h-[40px]" variant="default" bgColor="bg-white" textColor="text-black" >
                     View all projects
-                    <div className="rounded-full p-1 border border-[#F2F4F8]"><MdArrowOutward className='text-lg' /></div>
+                    <div className="rounded-full text-center border border-[#F2F4F8]"><MdArrowOutward className='text-lg' /></div>
           </Button>
         </div>
 
       {/* Project Grid */}
-<div className="flex md:flex-row flex-col justify-center items-center gap-4 mt-10 md:px-8 px-2">
+      <div className="w-full max-w-screen-xl mx-auto justify-center items-center">
+<div className=" grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-y-8 gap-x-4 md:gap-x-12 mt-10 md:px-8 px-2">
   <ProjectCard
     image=""
     title="Vertax Labs"
     tags={["SaaS", "Web app"]}
     isMockup
     showArrow={true}
+    cardWidth="w-[350px] h-auto md:w-[480px]"
   />
   <ProjectCard
     image=""
@@ -49,6 +51,7 @@ const Index = () => {
     tags={["Web3", "CMS"]}
     isMockup
     showArrow={true}
+    cardWidth="w-[350px] h-auto md:w-[480px]"
   />
   <ProjectCard
     image=""
@@ -56,6 +59,7 @@ const Index = () => {
     tags={["Crypto", "Web app"]}
     isMockup
     showArrow={true}
+    cardWidth="w-[350px] h-auto md:w-[480px]"
   />
   <ProjectCard
     image=""
@@ -63,10 +67,11 @@ const Index = () => {
     tags={["Finance", "Web3"]}
     isMockup
     showArrow={true}
+    cardWidth="w-[350px] h-auto md:w-[480px]"
   />
 </div>
 </div>
-
+</div>
   );
 };
 

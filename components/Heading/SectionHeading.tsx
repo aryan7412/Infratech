@@ -7,6 +7,7 @@ interface SectionHeadingProps {
   text: string;
   align?: "left" | "center";
   className?: string;
+  
 }
 
 const SectionHeading = ({ text, align = "left", className = "" }: SectionHeadingProps) => {

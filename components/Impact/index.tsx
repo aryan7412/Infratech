@@ -47,7 +47,7 @@ const StatsSection = () => {
     <SectionHeading text="Impact" align="center" />
     <div className="md:mr-32 mr-0">
       <Heading
-        text1="Sparkradix simplifies the process, "
+        text1="Sparkradix simplifies the process,"
         text2="& delivers results."
         align="center"
       />

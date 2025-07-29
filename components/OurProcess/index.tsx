@@ -106,14 +106,19 @@ const ProcessSection: React.FC = () => {
     <div className="bg-[#F6F7F9] py-20 m-0 px-4">
       <div className="max-w-7xl relative mx-auto flex flex-col md:flex-row gap-20">
         {/* Left Content */}
-        <div className="max-w-lg sticky top-20 self-start">
+        <div className="max-w-lg sticky top-20 self-start ">
           <SectionHeading className="md:ml-0 ml-4" text="Our process" />
-          <Heading
+          <div className="">
+            <h2 className="text-4xl font-bold text-[#2D2F33]">A proven & effective</h2>
+            <h2 className="text-4xl font-bold text-[#7B8398]">workflow process.</h2>
+          </div>
+          {/* <Heading
             className1="text-xl md:text-4xl"
             text1="A proven & effective "
             className2="text-xl md:text-4xl"
             text2="workflow process."
-          />
+            className3="ml-0"
+          /> */}
           <p className="md:mt-10 mt-2 md:text-sm text-xs text-[#50576B]">
             We dive deep into your project's objectives, stakeholders, and
             challenges to craft tailored strategies that deliver impactful

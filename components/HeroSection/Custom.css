@@ -6,20 +6,19 @@
   scrollbar-width: none;    
 }
 .marquee {
-  position: relative;
-  width: 100%;
+  white-space: nowrap;
   overflow: hidden;
+  position: relative;
 }
 
 .marquee-content {
-  display: flex;
-  width: fit-content;
-  animation: marquee-scroll 20s linear infinite;
+  display: inline-flex;
+  animation: scrollLeft 30s linear infinite;
 }
 
-@keyframes marquee-scroll {
+@keyframes scrollLeft {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);

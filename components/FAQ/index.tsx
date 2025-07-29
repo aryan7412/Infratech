@@ -46,18 +46,18 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-[#F6F7F9] pb-20 gap-44 mt-20">
+    <div className="flex w-full flex-col md:flex-row bg-[#F6F7F9] pb-20 gap-44  mt-20">
       {/* Left Section */}
       <div className="md:max-w-lg ">
-        <div className="ml-[-8rem] md:ml-0">
-          <SectionHeading text="FAQ's" align="left" />
-          <Heading text1="Have questions," text2="We got answers." align="left" />
+        <div className="md:ml-0 ml-3">
+          <SectionHeading text="FAQ's" className="md:ml-[9rem] ml-[2rem]" align="left" />
+          <Heading text1="Have questions, "className1="md:ml-0 ml-[1.5rem]" text2="We got answers." className2="md:ml-0 ml-[1.5rem]" align="left" />
         </div>
-        <p className="md:ml-40 mx-7 mt-5 text-[#50576B] text-sm text-left">
+        <p className="md:ml-[9.2rem] mx-7 mt-5 text-[#50576B] text-sm text-left">
           Everything you need to know about our process, and how we deliver
           results.
         </p>
-        <div className="md:mt-[22rem] mt-10 bg-white md:w-[28.125rem] w-[26rem] h-[10.75rem] md:ml-40 ml-8 rounded-3xl p-7 shadow-md">
+        <div className="md:mt-[22rem] mt-10 bg-white md:w-[28.125rem] w-[23rem] h-[10.75rem] md:ml-40 ml-2 rounded-3xl p-7 shadow-md">
           <p className="text-xl font-bold mb-2">Can't find your answer?</p>
           <p className="text-sm mb-4 text-[#6B7280]">
             Get in touch with our support team
@@ -82,7 +82,7 @@ const FAQSection = () => {
           type="single"
           collapsible
           defaultValue="item-0"
-          className="md:w-[550px] w-[400px] mx-10"
+          className="md:w-[550px] w-[330px] mx-10"
         >
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>

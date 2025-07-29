@@ -163,7 +163,7 @@ const Testimonials = () => {
 
                     {/* Right Section */}
 
-=======
+
                     <Button className="mt-2 " variant="default" bgColor="bg-white" textColor="text-black">
 
                         View all reviews
