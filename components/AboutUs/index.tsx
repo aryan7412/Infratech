@@ -48,14 +48,15 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="md:mt-40 mt-[160px]" data-aos="fade-up">
+    <div className="md:mt-[250px] mt-[160px]" data-aos="fade-up">
       {/* About Section */}
       <SectionHeading text="About us" align="center" />
       <div className="md:mr-36  md:ml-0">
         <Heading text1="We take pride in delivering" text2="Exceptional results" align="center" />
       </div>
-      <p className="text-[#c7d0ea] text-center max-w-6xl md:ml-[9rem] mt-7">
-        Founded in 2021, <strong>Sparkradix Infratech Private Limited</strong> is a Bhubaneswar-based leader in electrical, civil, and solar energy projects...
+      <p className="text-[#898e9d] text-center max-w-6xl md:ml-[9rem] mt-7">
+      Founded in 2021, <strong>Sparkradix Infratech Private Limited</strong> is a Bhubaneswar-based leader in electrical, civil, and solar energy projects. As a Class “A” Government-approved contractor, we specialize in creating sustainable, high-impact infrastructure that powers communities and drives progress across <br /> Odisha and beyond.
+<br />With over 4 years of expertise, we partner closely with government and private clients to deliver innovative solutions tailored to their unique needs. From robust power distribution systems to eco-friendly solar installations and durable civil constructions, our commitment to quality and sustainability fuels every <br /> project we undertake.
       </p>
 
       {/* Images Section */}

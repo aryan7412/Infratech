@@ -12,11 +12,11 @@ import { RiTelegram2Line } from "react-icons/ri";
 
 const Contact = () => {
   return (
-    <div className="bg-white py-20 mt-32">
+    <div className="bg-white py-20  mt-32">
       <div className="grid md:grid-cols-2 gap-20">
         {/* Left Content */}
         <div className="max-w-2xl">
-          <div className="ml-[-7rem] md:ml-0">
+          <div className="mx-12 md:ml-40 ">
           <SectionHeading text="Contactus" align="left" />
           </div>
           
