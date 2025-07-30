@@ -51,7 +51,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ number, title, description 
     <div className="relative md:mb-[88px] mb-[120px] z-20 w-12 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center font-semibold text-gray-700">
       {number.toString().padStart(2, "0")}
     </div>
-    <div className="p-4 bg-white w-full" data-aos="fade-up">
+    <div className="p-4 bg-transparent w-full" data-aos="fade-up">
       <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 relative">
         {title}
         <TbBorderCornerSquare
@@ -103,10 +103,10 @@ const ProcessSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#F6F7F9] py-20 m-0 px-4">
-      <div className="max-w-7xl relative mx-auto flex flex-col md:flex-row gap-20">
+    <div className="bg-[#F6F7F9] md:w-[1136px] md:ml-40 py-20 m-0 px-4">
+      <div className="relative mx-auto flex flex-col md:flex-row gap-20">
         {/* Left Content */}
-        <div className="max-w-lg sticky top-20 self-start ">
+        <div className="max-w-lg sticky top-20 self-start">
           <SectionHeading className="md:ml-0 ml-4" text="Our process" />
           <div className="">
             <h2 className="text-4xl font-bold text-[#2D2F33]">A proven & effective</h2>

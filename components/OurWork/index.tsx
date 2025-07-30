@@ -17,33 +17,34 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-[#F6F7F9] mt-32 w-full md:mx-0 px-4 md:px-0">
-      <div>
-        <SectionHeading text="Our Work" align="left" className="md:ml-40 ml-6" />
-        <div className="flex md:ml-40 ml-3 gap-1">
+    <div className="bg-[#F6F7F9] mt-32  md:w-[1136px] md:ml-40 ml-0 px-4 md:px-0">
+      <div className="w-[1136px] h-[164px] mx-auto">
+      <div >
+        <SectionHeading text="Our Work" align="left" className="md:ml-[28.5px] ml-3" />
+        <div className="flex md:ml-[20px] ml-0 gap-1">
           <div className="text-md md:text-3xl text-black font-bold">Building Beyond</div>
           <div className="text-md md:text-3xl text-[#145089] font-bold">Blueprints</div>
         </div>
       </div>
 
-            <div className="flex md:flex-row flex-col md:ml-40 ml-3 md:gap-20 gap-3 justify-start items-start" data-aos="fade-up">
-                <p className="mt-4 md:mr-[21rem] mr-0">See how we’ve helped clients turn ambitious visions into tangible, impactful <br /> infrastructure.</p>
+            <div className="md:w-[1136px] flex md:flex-row md:mr-0 mr-2 flex-col md:ml-[20px] ml-0 md:gap-20 gap-3 md:justify-between justify-start md:items-center items-start" data-aos="fade-up">
+                <p className="max-w-[636px] mt-4 md:mr-[21rem] pr-2 md:text-md text-sm">See how we’ve helped clients turn ambitious visions into tangible, impactful <br /> infrastructure.</p>
                 <Button className="md:w-[168px] w-25 h-[40px]  md:h-[40px]" variant="default" bgColor="bg-white" textColor="text-black" >
                     View all projects
                     <div className="rounded-full text-center border border-[#F2F4F8]"><MdArrowOutward className='text-lg' /></div>
           </Button>
         </div>
-
+      </div>
       {/* Project Grid */}
-      <div className="w-full max-w-screen-xl mx-auto justify-center items-center">
-<div className=" grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-y-8 gap-x-4 md:gap-x-12 mt-10 md:px-8 px-2">
+      <div className="md:w-[1136px] md:ml-3 ml-0 flex justify-center items-center">
+<div className=" grid md:grid-cols-2 grid-cols-1  gap-[32px] mt-10 px-0">
   <ProjectCard
     image=""
     title="Vertax Labs"
     tags={["SaaS", "Web app"]}
     isMockup
     showArrow={true}
-    cardWidth="w-[350px] h-auto md:w-[480px]"
+    // cardWidth="w-[254px] h-auto md:w-[524px] "
   />
   <ProjectCard
     image=""
@@ -51,7 +52,7 @@ const Index = () => {
     tags={["Web3", "CMS"]}
     isMockup
     showArrow={true}
-    cardWidth="w-[350px] h-auto md:w-[480px]"
+    // cardWidth="w-[350px] h-auto md:w-[480px]"
   />
   <ProjectCard
     image=""
@@ -59,7 +60,7 @@ const Index = () => {
     tags={["Crypto", "Web app"]}
     isMockup
     showArrow={true}
-    cardWidth="w-[350px] h-auto md:w-[480px]"
+    // cardWidth="w-[350px] h-auto md:w-[480px]"
   />
   <ProjectCard
     image=""
@@ -67,7 +68,7 @@ const Index = () => {
     tags={["Finance", "Web3"]}
     isMockup
     showArrow={true}
-    cardWidth="w-[350px] h-auto md:w-[480px]"
+    // cardWidth="w-[350px] h-auto md:w-[480px]"
   />
 </div>
 </div>

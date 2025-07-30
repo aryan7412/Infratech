@@ -9,33 +9,37 @@ interface ProjectCardProps {
   metric?: string;
   isMockup?: boolean;
   showArrow?: boolean;
-  cardWidth?: string;
+  // cardWidth?: string;
+  // cardMaxWidth?: string;
+  // cardMaxHeight?: string;
 }
 
 export default function ProjectCard({
   image,
   title,
-  tags,
+  tags,       
   description,
   metric,
   isMockup = false,
   showArrow = true,
-  cardWidth = "max-w-[450px]",
+  // cardWidth = "w-[550px]",
+  // cardMaxWidth = "w-[356px]",
+  // cardMaxHeight = "h-[300px]",
 }: ProjectCardProps) {
   return (
-    <div className={`bg-white rounded-3xl shadow-md overflow-hidden  w-[550px] ${cardWidth || "max-w-[450px]" } h-[460px] flex flex-col justify-between transition relative`}>
+    <div className={`bg-white rounded-3xl shadow-md overflow-hidden  md:w-[550px] min-w-[356px]  md:h-[460px] min-h-[300px] flex flex-col justify-between transition relative`}>
       {/* Image Section */}
       <Image
         src={image}
         alt={title ?? "Project image"}
         width={522}
         height={348}
-        className={`object-contain md:w-[522px] w-full h-[348px] mt-4 rounded-3xl ${isMockup ? "p-6" : "p-4"}`}
+        className={` md:w-[540px] w-[340px] md:h-[349px] h-[225px] mt-4 rounded-3xl ${isMockup ? "p-6" : "p-4"}`}
       />
 
 
       {/* Bottom Content */}
-      <div className="p-4 flex flex-col gap-2">
+      <div className="px-4 py-3 flex flex-col gap-2">
         {tags && (
           <div className="flex gap-2 text-sm text-gray-500">
             {tags.map((tag, i) => (

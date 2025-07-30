@@ -12,7 +12,7 @@ const Heading = ({ text1, text2, align = "left",className1="",className2="",clas
 
   return (
     <div className={`space-y-2 md:ml-[9rem] ml-0 ${className3}`}>
-      <h1 className={`text-4xl font-bold text-[#2D2F33] ${isCenter ? "text-center" : "text-left"} ${className1} `}>
+      <h1 className={`text-4xl font-bold text-[#2D2F33] ${isCenter ? "text-center" : "text-left"} ${className1}  `}>
         {text1}
       </h1>
       <h1 className={`text-4xl font-bold text-[#7B8398] ${isCenter ? "text-center" : "text-left"} ${className2}`}>

@@ -8,7 +8,7 @@ import { TbMessageChatbotFilled } from "react-icons/tb";
 
 const Testimonials = () => {
     return (
-        <div className="bg-[#F6F7F9] w-full pb-16 pt-10 px-4 mt-10">
+        <div className="bg-[#F6F7F9] w-full pb-16  pt-10 px-4 mt-10">
             <div data-aos="fade-up">
             <SectionHeading text="Testimonials" align="center" />
             <div className="md:mr-32 mr-0">
@@ -28,7 +28,7 @@ const Testimonials = () => {
             </div>
 
             {/* Grid of Testimonials */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mx-auto md:ml-36 max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-10 mx-auto md:ml-36 max-w-6xl">
                 {/* Left column (Card 1 spans 2 rows) */}
                 <div className="md:row-span-2 md:w-[35rem] min-w-[120px] md:h-[35.5rem] h-[25rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
                     <div>
@@ -57,7 +57,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Card 2 (Top Right) */}
-                <div className=" md:w-[35rem] min-w-[120px] min-h-[17.25rem] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md mb-[1.5rem]" data-aos="fade-up">
+                <div className=" md:w-[35rem] min-w-[120px] md:h-[17.25rem] min-h-[17.25] bg-white rounded-3xl p-6 flex flex-col justify-between shadow-md mb-[1.5rem]" data-aos="fade-up">
                     <div>
                         <div className="flex gap-x-3">
                         <div className="text-3xl font-bold text-[#316698]">2X</div>
@@ -86,7 +86,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Row of 2 small cards below */}
-                <div className="md:col-span-1 grid md:grid-cols-2 gap-6 grid-cols-1">
+                <div className="md:col-span-1 grid md:grid-cols-2 gap-2 grid-cols-1">
                     {/* Card 3 */}
                     <div className="md:w-[16.15rem] min-w-[150px] min-h-[16.375rem] bg-white rounded-3xl p-4 flex flex-col justify-between shadow-md" data-aos="fade-up" data-aos-delay="400">
                         <RiDoubleQuotesR className="text-pink-400 text-2xl" />
@@ -137,11 +137,11 @@ const Testimonials = () => {
 
 
             {/* Bottom Section */}
-            <div className="mt-12 px-4 md:ml-32 ml-5">
-                <div className="flex flex-col md:flex-row justify-center items-center max-w-7xl mx-auto">
+            <div className="mt-12 px-4 ">
+                <div className="flex flex-col w-[1136px] md:flex-row justify-between items-center ml-[8rem] ">
 
                     {/* Left Section */}
-                    <div className="flex flex-wrap justify-center items-center gap-4 text-[#50576B] text-sm md:mr-[31.5rem]">
+                    <div className="flex flex-wrap justify-center items-center gap-4 text-[#50576B] text-sm">
                         <p className="whitespace-nowrap">1500 satisfied clients love our services</p>
 
                         <div className="flex  items-center gap-2">
